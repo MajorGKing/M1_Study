@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 0d0014874844710409862ce577bdf071
   m_SerializeEntries:
   - m_GUID: 4b2b6501f4086384dbb5c663420089ec
-    m_Address: Assets/@Resources/Prefabs/hero.prefab
+    m_Address: hero
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

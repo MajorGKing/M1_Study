@@ -18,19 +18,19 @@ MonoBehaviour:
   m_GUID: 4ecbb0d1b92200f4fbb50659a66140de
   m_SerializeEntries:
   - m_GUID: bf9ec093fe189a04d92278eaa0f28574
-    m_Address: Assets/@Resources/Spines/goblin/goblin_SkeletonData.asset
+    m_Address: goblin_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e308705ac9a774499fb319ab993deb4
-    m_Address: Assets/@Resources/Spines/knight/knight_SkeletonData.asset
+    m_Address: knight_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 47fa580edd880c749a479a92662f21a4
-    m_Address: Assets/@Resources/Spines/wizard/wizard_SkeletonData.asset
+    m_Address: wizard_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
