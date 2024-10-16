@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sprites
+  m_EditorClassIdentifier: 
+  m_GroupName: Sprites
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fa463435ecf1b674284ea20778fde5f9
+  m_SerializeEntries:
+  - m_GUID: 70c47d429c75ad8489dfb257e05d1640
+    m_Address: Assets/@Resources/Sprites/Object/Object_Mineral.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9456dad1f5957414ab37f3ac1e8f980e
+    m_Address: Assets/@Resources/Sprites/Object/Object_Meat.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e9a97fa10743de468e835b553974a09
+    m_Address: Assets/@Resources/Sprites/Object/Object_Firewood.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a48a0e3bf496b4552b66fe3658998175, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0a5da83f936dfae499b11ac8b39f7018, type: 2}
+    - {fileID: 11400000, guid: 8aa472c794b2fe74c804691fa5abdef5, type: 2}
