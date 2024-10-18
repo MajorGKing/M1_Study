@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 0d0014874844710409862ce577bdf071
   m_SerializeEntries:
   - m_GUID: 4b2b6501f4086384dbb5c663420089ec
-    m_Address: hero
+    m_Address: Hero
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -26,7 +26,8 @@ MonoBehaviour:
   - m_GUID: 5a40e413d750cdb44b0fe888fbf55284
     m_Address: BaseMap
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a48a0e3bf496b4552b66fe3658998175, type: 2}
