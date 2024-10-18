@@ -25,6 +25,11 @@ public class GameScene : BaseScene
 
 		Managers.UI.ShowBaseUI<UI_Joystick>();
 
+		{
+			Monster monster = Managers.Object.Spawn<Monster>(new Vector3Int(0, 1, 0));
+			monster.CreatureState = ECreatureState.Idle;
+		}
+
 		// TODO
 
 		return true;

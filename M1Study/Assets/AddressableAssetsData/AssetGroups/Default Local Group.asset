@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: da700fd6e568b4f3f93e057be13da32b
-  m_SerializeEntries:
-  - m_GUID: 535008b11f1af491ea04f37cb4aafd4c
-    m_Address: Assets/@Resources/Prefabs/UI/UI_Joystick.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a48a0e3bf496b4552b66fe3658998175, type: 2}
   m_SchemaSet:
