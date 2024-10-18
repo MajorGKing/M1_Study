@@ -23,6 +23,8 @@ public class GameScene : BaseScene
 		CameraController camera = Camera.main.GetOrAddComponent<CameraController>();
 		camera.Target = hero;
 
+		Managers.UI.ShowBaseUI<UI_Joystick>();
+
 		// TODO
 
 		return true;

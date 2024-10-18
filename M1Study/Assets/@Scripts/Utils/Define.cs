@@ -18,6 +18,13 @@ public static class Define
 		PointerUp,
 		Drag,
 	}
+	
+	public enum EJoystickState
+	{
+		PointerDown,
+		PointerUp,
+		Drag,
+	}
 
 	public enum ESound
 	{
