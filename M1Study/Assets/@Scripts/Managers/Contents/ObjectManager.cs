@@ -7,6 +7,7 @@ public class ObjectManager
     public HashSet<Hero> Heroes { get; } = new HashSet<Hero>();
 	public HashSet<Monster> Monsters { get; } = new HashSet<Monster>();
 	public HashSet<Env> Envs { get; } = new HashSet<Env>();
+	public HeroCamp Camp { get; private set; }
 
     #region Roots
     public Transform GetRootTransform(string name)

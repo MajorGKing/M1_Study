@@ -36,6 +36,7 @@ public static class Define
 	{
 		None,
 		Creature,
+		HeroCamp,
 		Projectile,
 		Env,
 	}
@@ -62,6 +63,21 @@ public static class Define
 		Idle,
 		OnDamaged,
 		Dead
+	}
+
+	public enum ELayer
+	{
+		Default = 0,
+		TransparentFX = 1,
+		IgnoreRaycast = 2,
+		Dummy1 = 3,
+		Water = 4,
+		UI = 5,
+		Hero = 6,
+		Monster = 7,
+		GatheringResource = 8,
+		Obstacle = 9,
+		Projectile = 10,
 	}
 
 	public const int CAMERA_PROJECTION_SIZE = 12;
