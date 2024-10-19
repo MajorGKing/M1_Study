@@ -13,7 +13,6 @@ public class Hero : Creature
 
 		CreatureType = Define.ECreatureType.Hero;
 		CreatureState = Define.ECreatureState.Idle;
-		Speed = 5.0f;
 
 		Managers.Game.OnMoveDirChanged -= HandleOnMoveDirChanged;
 		Managers.Game.OnMoveDirChanged += HandleOnMoveDirChanged;
@@ -25,7 +24,7 @@ public class Hero : Creature
 
 	void Update()
 	{
-		transform.TranslateEx(_moveDir * Time.deltaTime * Speed);
+		transform.TranslateEx(_moveDir * Time.deltaTime * MoveSpeed);
 	}
 
 	private void HandleOnMoveDirChanged(Vector2 dir)

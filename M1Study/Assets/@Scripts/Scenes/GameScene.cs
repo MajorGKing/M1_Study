@@ -17,8 +17,7 @@ public class GameScene : BaseScene
 		map.transform.position = Vector3.zero;
 		map.name = "@BaseMap";
 
-		Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10, -5, 0));
-		hero.CreatureState = ECreatureState.Move;
+		Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(-10, -5, 0), HERO_KNIGHT_ID);
 
 		CameraController camera = Camera.main.GetOrAddComponent<CameraController>();
 		camera.Target = hero;
@@ -26,8 +25,12 @@ public class GameScene : BaseScene
 		Managers.UI.ShowBaseUI<UI_Joystick>();
 
 		{
-			Monster monster = Managers.Object.Spawn<Monster>(new Vector3Int(0, 1, 0));
-			monster.CreatureState = ECreatureState.Idle;
+			Managers.Object.Spawn<Monster>(new Vector3Int(0, 1, 0), MONSTER_BEAR_ID);
+		}
+
+		{
+			Env env = Managers.Object.Spawn<Env>(new Vector3(0, 2, 0), ENV_TREE1_ID);
+			env.EnvState = EEnvState.Idle;
 		}
 
 		// TODO

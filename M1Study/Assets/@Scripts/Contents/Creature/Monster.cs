@@ -37,8 +37,6 @@ public class Monster : Creature
 			return false;
 
 		CreatureType = Define.ECreatureType.Monster;
-		CreatureState = Define.ECreatureState.Idle;
-		Speed = 3.0f;
 
 		StartCoroutine(CoUpdateAI());
 
@@ -111,7 +109,7 @@ public class Monster : Creature
 		{
 			// Patrol or Return
 			Vector3 dir = (_destPos - transform.position);
-			float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * Speed);
+			float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * MoveSpeed);
 			transform.TranslateEx(dir.normalized * moveDist);
 
 			if (dir.sqrMagnitude <= 0.01f)
@@ -135,7 +133,7 @@ public class Monster : Creature
 			else
 			{
 				// 공격 범위 밖이라면 추적.
-				float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * Speed);
+				float moveDist = Mathf.Min(dir.magnitude, Time.deltaTime * MoveSpeed);
 				transform.TranslateEx(dir.normalized * moveDist);
 
 				// 너무 멀어지면 포기.
