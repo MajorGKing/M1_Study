@@ -88,5 +88,41 @@ public class ObjectManager
 		}
 
 		return obj as T;
-    } 
+    }
+
+	public void Despawn<T>(T obj) where T : BaseObject
+	{
+		Define.EObjectType objectType = obj.ObjectType;
+
+		if (obj.ObjectType == Define.EObjectType.Creature)
+		{
+			Creature creature = obj.GetComponent<Creature>();
+			switch (creature.CreatureType)
+			{
+				case Define.ECreatureType.Hero:
+					Hero hero = creature as Hero;
+					Heroes.Remove(hero);
+					break;
+				case Define.ECreatureType.Monster:
+					Monster monster = creature as Monster;
+					Monsters.Remove(monster);
+					break;
+			}
+		}
+		else if (obj.ObjectType == Define.EObjectType.Projectile)
+		{
+			// TODO
+		}
+		else if (obj.ObjectType == Define.EObjectType.Env)
+		{
+			Env env = obj as Env;
+			Envs.Remove(env);
+		}
+		else if (obj.ObjectType == Define.EObjectType.HeroCamp)
+		{
+			Camp = null;
+		}
+
+		Managers.Resource.Destroy(obj.gameObject);
+	}
 }

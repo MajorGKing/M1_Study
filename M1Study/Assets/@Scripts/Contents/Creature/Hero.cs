@@ -341,5 +341,7 @@ public class Hero : Creature
 		// Skill
 		if (_target.IsValid() == false)
 			return;
+		
+		_target.OnDamaged(this);
 	}
 }

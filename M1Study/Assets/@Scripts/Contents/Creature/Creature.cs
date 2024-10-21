@@ -169,8 +169,39 @@ public class Creature : BaseObject
     protected virtual void UpdateDead() { }
     #endregion
 
-    	#region Wait
-	protected Coroutine _coWait;
+    #region Battle
+    public override void OnDamaged(BaseObject attacker)
+    {
+        base.OnDamaged(attacker);
+
+        if (attacker.IsValid() == false)
+            return;
+
+        Creature creature = attacker as Creature;
+        if (creature == null)
+            return;
+
+        float finalDamage = creature.Atk; // TODO
+        Hp = Mathf.Clamp(Hp - finalDamage, 0, MaxHp);
+
+        Debug.Log("Hp : " + Hp);
+
+        if (Hp <= 0)
+        {
+            OnDead(attacker);
+            CreatureState = Define.ECreatureState.Dead;
+        }
+    }
+
+    public override void OnDead(BaseObject attacker)
+    {
+        base.OnDead(attacker);
+    }
+    #endregion
+
+
+    #region Wait
+    protected Coroutine _coWait;
 
 	protected void StartWait(float seconds)
 	{

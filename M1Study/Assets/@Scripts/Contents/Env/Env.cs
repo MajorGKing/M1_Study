@@ -62,4 +62,32 @@ public class Env : BaseObject
 				break;
 		}
 	}
+
+	public override void OnDamaged(BaseObject attacker)
+	{
+		if (EnvState == Define.EEnvState.Dead)
+			return;
+
+		base.OnDamaged(attacker);
+
+		float finalDamage = 1;
+		EnvState = Define.EEnvState.OnDamaged;
+
+		// TODO : Show UI
+
+		Hp = Mathf.Clamp(Hp - finalDamage, 0, MaxHp);
+		if (Hp <= 0)
+			OnDead(attacker);
+	}
+
+	public override void OnDead(BaseObject attacker)
+	{
+		base.OnDead(attacker);
+
+		EnvState = Define.EEnvState.Dead;
+
+		// TODO : Drop Item	
+
+		Managers.Object.Despawn(this);
+	}
 }
