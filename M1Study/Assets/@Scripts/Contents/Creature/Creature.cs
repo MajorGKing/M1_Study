@@ -117,6 +117,22 @@ public class Creature : BaseObject
         }
     }
 
+    public void ChangeColliderSize(Define.EColliderSize size = Define.EColliderSize.Normal)
+    {
+        switch (size)
+        {
+            case Define.EColliderSize.Small:
+                Collider.radius = CreatureData.ColliderRadius * 0.8f;
+                break;
+            case Define.EColliderSize.Normal:
+                Collider.radius = CreatureData.ColliderRadius;
+                break;
+            case Define.EColliderSize.Big:
+                Collider.radius = CreatureData.ColliderRadius * 1.2f;
+                break;
+        }
+    }
+
     #region AI
     public float UpdateAITick { get; protected set; } = 0.0f;
 
