@@ -82,6 +82,10 @@ public class ObjectManager
 
 			env.SetInfo(templateID);
 		}
+		else if (obj.ObjectType == Define.EObjectType.HeroCamp)
+		{
+			Camp = go.GetComponent<HeroCamp>();
+		}
 
 		return obj as T;
     } 

@@ -58,6 +58,17 @@ public static class Define
 		Dead
 	}
 
+	public enum EHeroMoveState
+    {
+		None,
+		TargetMonster,
+		CollectEnv,
+		ReturnToCamp,
+		ForceMove
+	}
+		
+
+
 	public enum EEnvState
 	{
 		Idle,
