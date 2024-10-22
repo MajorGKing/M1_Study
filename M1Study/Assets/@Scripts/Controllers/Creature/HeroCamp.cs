@@ -6,7 +6,7 @@ public class HeroCamp : BaseObject
 {
     Vector2 _moveDir = Vector2.zero;
 
-    public float Speed { get; set; } = 15.0f;
+    public float Speed { get; set; } = 5.0f;
 
     public Transform Pivot { get; private set; }
     public Transform Destination { get; private set; }
