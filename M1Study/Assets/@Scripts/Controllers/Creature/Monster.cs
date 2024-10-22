@@ -102,7 +102,6 @@ public class Monster : Creature
 		}
 		else
 		{
-			Debug.Log("Monster attack check");
 			// Chase
 			ChaseOrAttackTarget(Define.MONSTER_SEARCH_DISTANCE, 5.0f);
 

@@ -8,6 +8,8 @@ using UnityEngine.Rendering;
 public class Creature : BaseObject
 {
     public BaseObject Target { get; protected set; }
+    public SkillComponent Skills { get; protected set; }
+
     public Data.CreatureData CreatureData { get; private set; }
     public Define.ECreatureType CreatureType { get; protected set; } = Define.ECreatureType.None;
 
@@ -109,7 +111,7 @@ public class Creature : BaseObject
                 PlayAnimation(0, AnimName.IDLE, true);
                 break;
             case Define.ECreatureState.Skill:
-                PlayAnimation(0, AnimName.ATTACK_A, true);
+                //PlayAnimation(0, AnimName.ATTACK_A, true);
                 break;
             case Define.ECreatureState.Move:
                 PlayAnimation(0, AnimName.MOVE, true);
@@ -248,7 +250,6 @@ public class Creature : BaseObject
         }
         else
         {
-            Debug.Log("Too Far");
             // 공격 범위 밖이라면 추적.
             SetRigidBodyVelocity(dir.normalized * MoveSpeed);
 
