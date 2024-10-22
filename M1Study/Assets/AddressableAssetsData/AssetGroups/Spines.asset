@@ -23,18 +23,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e308705ac9a774499fb319ab993deb4
-    m_Address: knight_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47fa580edd880c749a479a92662f21a4
-    m_Address: wizard_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e42fb9220d96d7e4c86a9de95818b96b
     m_Address: wood_2_SkeletonData
     m_ReadOnly: 0
