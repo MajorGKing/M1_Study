@@ -44,7 +44,8 @@ MonoBehaviour:
   - m_GUID: f8cdeb74165961b4484670dfebc571ad
     m_Address: ProjectileData
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a48a0e3bf496b4552b66fe3658998175, type: 2}
