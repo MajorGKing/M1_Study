@@ -98,6 +98,14 @@ public static class Define
 		Big
 	}
 
+	public enum EFindPathResult
+	{
+		Fail_LerpCell,
+		Fail_NoPath,
+		Fail_MoveTo,
+		Success,
+	}
+
 	public enum ECellCollisionType
 	{
 		None,
@@ -113,6 +121,9 @@ public static class Define
 	public const int HERO_DEFAULT_MELEE_ATTACK_RANGE = 1;
 	public const int HERO_DEFAULT_RANGED_ATTACK_RANGE = 5;
 	public const float HERO_DEFAULT_STOP_RANGE = 1.5f;
+
+	public const int HERO_DEFAULT_MOVE_DEPTH = 5;
+	public const int MONSTER_DEFAULT_MOVE_DEPTH = 3;
 
 	public const int HERO_WIZARD_ID = 201000;
 	public const int HERO_KNIGHT_ID = 201001;

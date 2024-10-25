@@ -101,7 +101,8 @@ public class Monster : Creature
 				return;
 			}
 
-			SetRigidBodyVelocity(dir.normalized * MoveSpeed);
+			// Move
+			FindPathAndMoveToCellPos(_destPos, Define.MONSTER_DEFAULT_MOVE_DEPTH);
 		}
 		else
 		{

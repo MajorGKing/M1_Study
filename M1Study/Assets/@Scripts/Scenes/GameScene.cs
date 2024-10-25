@@ -29,6 +29,7 @@ public class GameScene : BaseScene
 				continue;
 
 			Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(1, 0, 0), heroTemplateID);
+			Managers.Map.MoveTo(hero, randCellPos, true);
 		}
 
 		CameraController camera = Camera.main.GetOrAddComponent<CameraController>();

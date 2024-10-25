@@ -101,6 +101,9 @@ public class Creature : BaseObject
         // State
         CreatureState = Define.ECreatureState.Idle;
 
+        // Map
+		StartCoroutine(CoLerpToCellPos());
+
     }
 
     protected override void UpdateAnimation()
@@ -121,22 +124,6 @@ public class Creature : BaseObject
                 RigidBody.simulated = false;
                 break;
             default:
-                break;
-        }
-    }
-
-    public void ChangeColliderSize(Define.EColliderSize size = Define.EColliderSize.Normal)
-    {
-        switch (size)
-        {
-            case Define.EColliderSize.Small:
-                Collider.radius = CreatureData.ColliderRadius * 0.8f;
-                break;
-            case Define.EColliderSize.Normal:
-                Collider.radius = CreatureData.ColliderRadius;
-                break;
-            case Define.EColliderSize.Big:
-                Collider.radius = CreatureData.ColliderRadius * 1.2f;
                 break;
         }
     }
@@ -259,7 +246,7 @@ public class Creature : BaseObject
         else
         {
             // 공격 범위 밖이라면 추적.
-            SetRigidBodyVelocity(dir.normalized * MoveSpeed);
+            FindPathAndMoveToCellPos(Target.transform.position, Define.HERO_DEFAULT_MOVE_DEPTH);
 
             // 너무 멀어지면 포기.
             float searchDistanceSqr = chaseRange * chaseRange;
@@ -272,33 +259,6 @@ public class Creature : BaseObject
         }
     }
 
-    //protected void ChaseOrAttackTarget(float attackRange, float chaseRange)
-    //{
-    //    Vector3 dir = (Target.transform.position - transform.position);
-    //    float distToTargetSqr = dir.sqrMagnitude;
-    //    float attackDistanceSqr = attackRange * attackRange;
-
-    //    if (distToTargetSqr <= attackDistanceSqr)
-    //    {
-    //        // 공격 범위 이내로 들어왔다면 공격.
-    //        CreatureState = Define.ECreatureState.Skill;
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        // 공격 범위 밖이라면 추적.
-    //        SetRigidBodyVelocity(dir.normalized * MoveSpeed);
-
-    //        // 너무 멀어지면 포기.
-    //        float searchDistanceSqr = chaseRange * chaseRange;
-    //        if (distToTargetSqr > searchDistanceSqr)
-    //        {
-    //            Target = null;
-    //            CreatureState = Define.ECreatureState.Move;
-    //        }
-    //        return;
-    //    }
-    //}
     #endregion
 
     #region Misc
@@ -307,5 +267,57 @@ public class Creature : BaseObject
         return bo.IsValid();
     }
 
+    #endregion
+
+    #region Map
+    public Define.EFindPathResult FindPathAndMoveToCellPos(Vector3 destWorldPos, int maxDepth, bool forceMoveCloser = false)
+	{
+		Vector3Int destCellPos = Managers.Map.World2Cell(destWorldPos);
+		return FindPathAndMoveToCellPos(destCellPos, maxDepth, forceMoveCloser);
+	}
+
+	public Define.EFindPathResult FindPathAndMoveToCellPos(Vector3Int destCellPos, int maxDepth, bool forceMoveCloser = false)
+	{
+		if (LerpCellPosCompleted == false)
+			return Define.EFindPathResult.Fail_LerpCell;
+
+		
+		Vector3Int dirCellPos = destCellPos - CellPos;
+		Vector3Int nextPos = CellPos + dirCellPos;
+
+		if (Managers.Map.MoveTo(this, nextPos) == false)
+			return Define.EFindPathResult.Fail_MoveTo;
+
+		return Define.EFindPathResult.Success;
+	}
+
+	public bool MoveToCellPos(Vector3Int destCellPos, int maxDepth, bool forceMoveCloser = false)
+	{
+		if (LerpCellPosCompleted == false)
+			return false;
+
+		return Managers.Map.MoveTo(this, destCellPos);
+	}
+
+	protected IEnumerator CoLerpToCellPos()
+	{
+		while (true)
+		{
+			Hero hero = this as Hero;
+			if (hero != null)
+			{
+				float div = 5;
+				Vector3 campPos = Managers.Object.Camp.Destination.transform.position;
+				Vector3Int campCellPos = Managers.Map.World2Cell(campPos);
+				float ratio = Math.Max(1, (CellPos - campCellPos).magnitude / div);
+
+				LerpToCellPos(CreatureData.MoveSpeed * ratio);
+			}
+			else
+				LerpToCellPos(CreatureData.MoveSpeed);
+
+			yield return null;
+		}
+	}
     #endregion
 }
