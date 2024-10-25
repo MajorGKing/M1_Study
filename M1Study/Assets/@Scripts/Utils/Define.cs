@@ -98,9 +98,16 @@ public static class Define
 		Big
 	}
 
+	public enum ECellCollisionType
+	{
+		None,
+		SemiWall,
+		Wall,
+	}
+
 	public const int CAMERA_PROJECTION_SIZE = 12;
 
-	
+	// HARD CODING
 	public const float HERO_SEARCH_DISTANCE = 8.0f;
 	public const float MONSTER_SEARCH_DISTANCE = 8.0f;
 	public const int HERO_DEFAULT_MELEE_ATTACK_RANGE = 1;
@@ -118,6 +125,10 @@ public static class Define
 
 	public const int ENV_TREE1_ID = 300001;
 	public const int ENV_TREE2_ID = 301000;
+
+	public const char MAP_TOOL_WALL = '0';
+	public const char MAP_TOOL_NONE = '1';
+	public const char MAP_TOOL_SEMI_WALL = '2';
 }
 
 public static class AnimName
