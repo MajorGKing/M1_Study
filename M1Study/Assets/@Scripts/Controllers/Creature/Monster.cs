@@ -91,18 +91,24 @@ public class Monster : Creature
 
 	protected override void UpdateMove()
 	{
-		if (Target == null)
+		if (Target.IsValid() == false)
 		{
-			// Patrol or Return
-			Vector3 dir = (_destPos - transform.position);
-			if (dir.sqrMagnitude <= 0.01f)
+			Creature creature = FindClosestInRange(Define.MONSTER_SEARCH_DISTANCE, Managers.Object.Heroes, func: IsValid) as Creature;
+			if (creature != null)
 			{
-				CreatureState = Define.ECreatureState.Idle;
+				Target = creature;
+				CreatureState = Define.ECreatureState.Move;
 				return;
 			}
 
 			// Move
 			FindPathAndMoveToCellPos(_destPos, Define.MONSTER_DEFAULT_MOVE_DEPTH);
+
+			if (LerpCellPosCompleted)
+			{
+				CreatureState = Define.ECreatureState.Idle;
+				return;
+			}
 		}
 		else
 		{

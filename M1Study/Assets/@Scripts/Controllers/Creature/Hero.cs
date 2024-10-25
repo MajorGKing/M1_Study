@@ -137,6 +137,16 @@ public class Hero : Creature
 	}
 	protected override void UpdateMove() 
 	{
+		if (HeroMoveState == Define.EHeroMoveState.ForcePath)
+		{
+			MoveByForcePath();
+			return;
+		}
+
+		if (CheckHeroCampDistanceAndForcePath())
+			return;
+
+
 		// 0. 누르고 있다면, 강제 이동
 		if (HeroMoveState == Define.EHeroMoveState.ForceMove)
 		{
@@ -221,6 +231,61 @@ public class Hero : Creature
 		if (LerpCellPosCompleted)
 			CreatureState = Define.ECreatureState.Idle;
 	}
+
+	Queue<Vector3Int> _forcePath = new Queue<Vector3Int>();
+
+	private bool CheckHeroCampDistanceAndForcePath()
+	{
+		// 너무 멀어서 못 간다.
+		Vector3 destPos = HeroCampDest.position;
+		Vector3Int destCellPos = Managers.Map.World2Cell(destPos);
+		if ((CellPos - destCellPos).magnitude <= 10)
+			return false;
+
+		if (Managers.Map.CanGo(destCellPos, ignoreObjects: true) == false)
+			return false;
+
+		List<Vector3Int> path = Managers.Map.FindPath(CellPos, destCellPos, 100);
+		if (path.Count < 2)
+			return false;
+
+		HeroMoveState = Define.EHeroMoveState.ForcePath;
+
+		_forcePath.Clear();
+		foreach (var p in path)
+		{
+			_forcePath.Enqueue(p);
+		}
+		_forcePath.Dequeue();
+
+		return true;
+	}
+
+	void MoveByForcePath()
+	{
+		if (_forcePath.Count == 0)
+		{
+			HeroMoveState = Define.EHeroMoveState.None;
+			return;
+		}
+
+		Vector3Int cellPos = _forcePath.Peek();
+
+		if (MoveToCellPos(cellPos, 2))
+		{
+			_forcePath.Dequeue();
+			return;
+		}
+
+		// 실패 사유가 영웅이라면.
+		Hero hero = Managers.Map.GetObject(cellPos) as Hero;
+		if (hero != null && hero.CreatureState == Define.ECreatureState.Idle)
+		{
+			HeroMoveState = Define.EHeroMoveState.None;
+			return;
+		}
+	}
+
 	protected override void UpdateSkill() 
 	{
 		if (HeroMoveState == Define.EHeroMoveState.ForceMove)

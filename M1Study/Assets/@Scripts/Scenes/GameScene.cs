@@ -21,8 +21,8 @@ public class GameScene : BaseScene
 		for (int i = 0; i < 5; i++)
 		{
 			//int heroTemplateID = HERO_WIZARD_ID;
-			//int heroTemplateID = HERO_WIZARD_ID + Random.Range(0, 5);
-			int heroTemplateID = HERO_KNIGHT_ID;
+			int heroTemplateID = HERO_WIZARD_ID + Random.Range(0, 5);
+			//int heroTemplateID = HERO_KNIGHT_ID;
 
 			Vector3Int randCellPos = new Vector3Int(0 + Random.Range(-3, 3), 0 + Random.Range(-3, 3), 0);
 			if (Managers.Map.CanGo(randCellPos) == false)
@@ -38,13 +38,13 @@ public class GameScene : BaseScene
 		Managers.UI.ShowBaseUI<UI_Joystick>();
 
 		{
-			//Managers.Object.Spawn<Monster>(new Vector3Int(0, 1, 0), MONSTER_SLIME_ID);
-			//Managers.Object.Spawn<Monster>(new Vector3(3, 1, 0), MONSTER_GOBLIN_ARCHER_ID);
+			Monster monster = Managers.Object.Spawn<Monster>(new Vector3(1, 1, 0), MONSTER_SLIME_ID);
+			Managers.Map.MoveTo(monster, new Vector3Int(0, 4, 0), true);
 		}
 
 		{
-			//Env env = Managers.Object.Spawn<Env>(new Vector3(0, 2, 0), ENV_TREE1_ID);
-			//env.EnvState = EEnvState.Idle;
+			Env env = Managers.Object.Spawn<Env>(new Vector3(0, 2, 0), ENV_TREE1_ID);
+			env.EnvState = EEnvState.Idle;
 		}
 
 		// TODO
