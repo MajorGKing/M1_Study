@@ -48,11 +48,7 @@ public class Monster : Creature
 		base.SetInfo(templateID);
 
 		// State
-		CreatureState = Define.ECreatureState.Idle;
-
-		// Skill
-		Skills = gameObject.GetOrAddComponent<SkillComponent>();
-		Skills.SetInfo(this, CreatureData.SkillIdList);
+		CreatureState = Define.ECreatureState.Idle;		
 	}
 
 	private void Start() 
@@ -113,8 +109,7 @@ public class Monster : Creature
 		else
 		{
 			// Chase
-			SkillBase skill = Skills.GetReadySkill();
-			ChaseOrAttackTarget(Define.MONSTER_SEARCH_DISTANCE, skill);
+			ChaseOrAttackTarget(Define.MONSTER_SEARCH_DISTANCE, AttackDistance);
 
 			// 너무 멀어지면 포기.
 			if (Target.IsValid() == false)
@@ -128,6 +123,8 @@ public class Monster : Creature
 
 	protected override void UpdateSkill()
 	{
+		base.UpdateSkill();
+
 		if (Target.IsValid() == false)
 		{
 			Target = null;
