@@ -58,4 +58,39 @@ public static class Util
 	{
 		return (T)Enum.Parse(typeof(T), value, true);
 	}
+
+	public static Define.ECreatureType DetermineTargetType(Define.ECreatureType ownerType, bool findAllies)
+	{
+		if (ownerType == Define.ECreatureType.Hero)
+		{
+			return findAllies ? Define.ECreatureType.Hero : Define.ECreatureType.Monster;
+		}
+		else if (ownerType == Define.ECreatureType.Monster)
+		{
+			return findAllies ? Define.ECreatureType.Monster : Define.ECreatureType.Hero;
+		}
+
+		return Define.ECreatureType.None;
+	}
+
+	public static float GetEffectRadius(Define.EEffectSize size)
+	{
+		switch (size)
+		{
+			case Define.EEffectSize.CircleSmall:
+				return Define.EFFECT_SMALL_RADIUS;
+			case Define.EEffectSize.CircleNormal:
+				return Define.EFFECT_NORMAL_RADIUS;
+			case Define.EEffectSize.CircleBig:
+				return Define.EFFECT_BIG_RADIUS;
+			case Define.EEffectSize.ConeSmall:
+				return Define.EFFECT_SMALL_RADIUS * 2f;
+			case Define.EEffectSize.ConeNormal:
+				return Define.EFFECT_NORMAL_RADIUS * 2f;
+			case Define.EEffectSize.ConeBig:
+				return Define.EFFECT_BIG_RADIUS * 2f;
+			default:
+				return Define.EFFECT_SMALL_RADIUS;
+		}
+	}
 }

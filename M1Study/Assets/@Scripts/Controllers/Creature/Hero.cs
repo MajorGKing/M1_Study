@@ -73,15 +73,6 @@ public class Hero : Creature
 	}
 
 	#region AI
-	public float AttackDistance
-	{
-		get
-		{
-			float targetRadius = (Target.IsValid() ? Target.ColliderRadius : 0);
-			return ColliderRadius + targetRadius + 2.0f;
-		}
-	}
-
 	public float StopDistance { get; private set; } = 1.0f;
 	
 	public Transform HeroCampDest
