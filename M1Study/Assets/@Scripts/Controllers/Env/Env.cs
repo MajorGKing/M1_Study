@@ -73,7 +73,7 @@ public class Env : BaseObject
 		float finalDamage = 1;
 		EnvState = Define.EEnvState.OnDamaged;
 
-		// TODO : Show UI
+		Managers.Object.ShowDamageFont(CenterPosition, finalDamage, transform, false);
 
 		Hp = Mathf.Clamp(Hp - finalDamage, 0, MaxHp);
 		if (Hp <= 0)
