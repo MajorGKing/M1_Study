@@ -5,6 +5,7 @@ using UnityEngine;
 public class EffectBase : BaseObject
 {
     public Creature Owner;
+	public SkillBase Skill;
     public Data.EffectData EffectData;
 	public Define.EEffectType EffectType;
 
@@ -20,10 +21,12 @@ public class EffectBase : BaseObject
 		return true;
 	}
 
-    public virtual void SetInfo(int templateID, Creature owner, Define.EEffectSpawnType spawnType)
+    public virtual void SetInfo(int templateID, Creature owner, Define.EEffectSpawnType spawnType, SkillBase skill)
 	{
 		DataTemplateID = templateID;
 		EffectData = Managers.Data.EffectDic[templateID];
+
+		Skill = skill;
 
 		Owner = owner;
 		_spawnType = spawnType;
@@ -32,6 +35,12 @@ public class EffectBase : BaseObject
 			SetSpineAnimation(EffectData.SkeletonDataID, SortingLayers.SKILL_EFFECT);
 
 		EffectType = EffectData.EffectType;
+
+		// AoE
+		if (_spawnType == Define.EEffectSpawnType.External)
+			Remains = float.MaxValue;
+		else
+			Remains = EffectData.TickTime * EffectData.TickCount;
 	}
 
 	public virtual void ApplyEffect()
@@ -85,6 +94,12 @@ public class EffectBase : BaseObject
 				return true;
 
 			case Define.EEffectClearType.ClearSkill:
+				// AoE범위 안에 있는경우 해제 X
+				if (_spawnType != Define.EEffectSpawnType.External)
+				{
+					Managers.Object.Despawn(this);
+					return true;
+				}
 				break;
 		}
 

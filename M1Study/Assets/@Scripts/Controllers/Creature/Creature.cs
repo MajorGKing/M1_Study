@@ -244,6 +244,32 @@ public class Creature : BaseObject
 	#endregion
 
     #region Battle
+    public void HandleDotDamage(EffectBase effect)
+	{
+		if (effect == null)
+			return;
+		if (effect.Owner.IsValid() == false)
+			return;
+
+		// TEMP
+		float damage = (Hp * effect.EffectData.PercentAdd) + effect.EffectData.Amount;
+		if (effect.EffectData.ClassName.Contains("Heal"))
+			damage *= -1f;
+
+		float finalDamage = Mathf.Round(damage);
+		Hp = Mathf.Clamp(Hp - finalDamage, 0, MaxHp.Value);
+
+		Managers.Object.ShowDamageFont(CenterPosition, finalDamage, transform, false);
+
+		// TODO : OnDamaged 통합
+		if (Hp <= 0)
+		{
+			OnDead(effect.Owner, effect.Skill);
+			CreatureState = Define.ECreatureState.Dead;
+			return;
+		}
+	}
+
     public override void OnDamaged(BaseObject attacker, SkillBase skill)
     {
         base.OnDamaged(attacker, skill);
@@ -268,7 +294,11 @@ public class Creature : BaseObject
 
         // 스킬에 따른 Effect 적용
 		if (skill.SkillData.EffectIds != null)
-			Effects.GenerateEffects(skill.SkillData.EffectIds.ToArray(), Define.EEffectSpawnType.Skill);
+			Effects.GenerateEffects(skill.SkillData.EffectIds.ToArray(), Define.EEffectSpawnType.Skill, skill);
+
+        // AOE
+		if (skill != null && skill.SkillData.AoEId != 0)
+			skill.GenerateAoE(transform.position);
     }
 
     public override void OnDead(BaseObject attacker, SkillBase skill)

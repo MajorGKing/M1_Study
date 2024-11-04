@@ -22,8 +22,8 @@ public class GameScene : BaseScene
 		{
 			//int heroTemplateID = HERO_WIZARD_ID;
 			//int heroTemplateID = HERO_WIZARD_ID + Random.Range(0, 5);
-			//int heroTemplateID = HERO_KNIGHT_ID;
-			int heroTemplateID = HERO_LION_ID;
+			int heroTemplateID = HERO_KNIGHT_ID;
+			//int heroTemplateID = HERO_LION_ID;
 
 			Vector3Int randCellPos = new Vector3Int(0 + Random.Range(-3, 3), 0 + Random.Range(-3, 3), 0);
 			if (Managers.Map.CanGo(null, randCellPos) == false)

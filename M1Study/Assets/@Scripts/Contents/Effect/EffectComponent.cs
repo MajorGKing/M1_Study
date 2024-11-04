@@ -13,7 +13,7 @@ public class EffectComponent : MonoBehaviour
 		_owner = Owner;
 	}
 
-    public List<EffectBase> GenerateEffects(IEnumerable<int> effectIds, Define.EEffectSpawnType spawnType)
+    public List<EffectBase> GenerateEffects(IEnumerable<int> effectIds, Define.EEffectSpawnType spawnType, SkillBase skill)
 	{
 		List<EffectBase> generatedEffects = new List<EffectBase>();
 
@@ -38,7 +38,7 @@ public class EffectComponent : MonoBehaviour
 			ActiveEffects.Add(effect);
 			generatedEffects.Add(effect);
 
-			effect.SetInfo(id, _owner, spawnType);
+			effect.SetInfo(id, _owner, spawnType, skill);
 			effect.ApplyEffect();
 		}
 

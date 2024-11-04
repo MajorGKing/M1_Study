@@ -21,6 +21,7 @@ public class DataTransformer : EditorWindow
 		ParseExcelDataToJson<Data.ProjectileDataLoader, Data.ProjectileData>("Projectile");
 		ParseExcelDataToJson<Data.EnvDataLoader, Data.EnvData>("Env");
 		ParseExcelDataToJson<Data.EffectDataLoader, Data.EffectData>("Effect");
+		ParseExcelDataToJson<Data.AoEDataLoader, Data.AoEData>("AoE");
 		//LEGACY_ParseTestData("Test");
 
 		Debug.Log("DataTransformer Completed");
