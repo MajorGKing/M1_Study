@@ -41,12 +41,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7e334a71aaaee904c8e07547dfb9f815
-    m_Address: goblin_shot.sprite
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ad9b13230f9c3894884e35fdd463d9f9
     m_Address: 005.sprite
     m_ReadOnly: 0
