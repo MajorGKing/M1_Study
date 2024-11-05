@@ -35,19 +35,13 @@ public static class Define
 	public enum EObjectType
 	{
 		None,
-		Creature,
 		HeroCamp,
-		Projectile,
-		Env,
-		Effect,
-	}
-
-	public enum ECreatureType
-	{
-		None,
 		Hero,
 		Monster,
 		Npc,
+		Projectile,
+		Env,
+		Effect,
 	}
 
 	public enum ECreatureState

@@ -11,7 +11,6 @@ public class Creature : BaseObject
     public SkillComponent Skills { get; protected set; }
 
     public Data.CreatureData CreatureData { get; private set; }
-    public Define.ECreatureType CreatureType { get; protected set; } = Define.ECreatureType.None;
 
     public EffectComponent Effects { get; set; }
 
@@ -70,7 +69,6 @@ public class Creature : BaseObject
         if (base.Init() == false)
             return false;
 
-        ObjectType = Define.EObjectType.Creature;
         //CreatureState = Define.ECreatureState.Idle;
         return true;
     }
@@ -79,7 +77,7 @@ public class Creature : BaseObject
     {
         DataTemplateID = templateID;
 
-        if (CreatureType == Define.ECreatureType.Hero)
+        if (ObjectType == Define.EObjectType.Hero)
             CreatureData = Managers.Data.HeroDic[templateID];
         else
             CreatureData = Managers.Data.MonsterDic[templateID];

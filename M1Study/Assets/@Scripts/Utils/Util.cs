@@ -69,18 +69,18 @@ public static class Util
 		return parsedColor;
 	}
 
-	public static Define.ECreatureType DetermineTargetType(Define.ECreatureType ownerType, bool findAllies)
+	public static Define.EObjectType DetermineTargetType(Define.EObjectType ownerType, bool findAllies)
 	{
-		if (ownerType == Define.ECreatureType.Hero)
+		if (ownerType == Define.EObjectType.Hero)
 		{
-			return findAllies ? Define.ECreatureType.Hero : Define.ECreatureType.Monster;
+			return findAllies ? Define.EObjectType.Hero : Define.EObjectType.Monster;
 		}
-		else if (ownerType == Define.ECreatureType.Monster)
+		else if (ownerType == Define.EObjectType.Monster)
 		{
-			return findAllies ? Define.ECreatureType.Monster : Define.ECreatureType.Hero;
+			return findAllies ? Define.EObjectType.Monster : Define.EObjectType.Hero;
 		}
 
-		return Define.ECreatureType.None;
+		return Define.EObjectType.None;
 	}
 
 	public static float GetEffectRadius(Define.EEffectSize size)
