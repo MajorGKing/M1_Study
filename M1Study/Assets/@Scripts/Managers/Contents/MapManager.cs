@@ -41,8 +41,6 @@ public class MapManager
 		CellGrid = map.GetComponent<Grid>();
 
 		ParseCollisionData(map, mapName);
-
-		SpawnObjectsByData(map, mapName);
 	}
 
     public void DestroyMap()
@@ -91,17 +89,6 @@ public class MapManager
 				}
 			}
 		}
-	}
-
-    void SpawnObjectsByData(GameObject map, string mapName, string tilemap = "Tilemap_Object")
-	{
-		Tilemap tm = Util.FindChild<Tilemap>(map, tilemap, true);
-
-		if (tm != null)
-			tm.gameObject.SetActive(false);
-
-		// TEMP
-		return;
 	}
 
     public bool MoveTo(Creature obj, Vector3Int cellPos, bool forceMove = false)
