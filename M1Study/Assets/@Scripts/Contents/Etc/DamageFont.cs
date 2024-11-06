@@ -1,14 +1,14 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class DamageFont : MonoBehaviour
 {
-    private TextMeshPro _damageText;
+	private TextMeshPro _damageText;
 
-    public void SetInfo(Vector2 pos, float damage = 0, Transform parent = null, bool isCritical = false)
+	public void SetInfo(Vector2 pos, float damage = 0, Transform parent = null, bool isCritical = false)
 	{
 		_damageText = GetComponent<TextMeshPro>();
 		_damageText.sortingOrder = SortingLayers.PROJECTILE;
@@ -37,7 +37,7 @@ public class DamageFont : MonoBehaviour
 		DoAnimation();
 	}
 
-    private void DoAnimation()
+	private void DoAnimation()
 	{
 		Sequence seq = DOTween.Sequence();
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AreaAttack : AreaSkill
 {
-    public override void SetInfo(Creature owner, int skillTemplateID)
+	public override void SetInfo(Creature owner, int skillTemplateID)
 	{
 		base.SetInfo(owner, skillTemplateID);
 

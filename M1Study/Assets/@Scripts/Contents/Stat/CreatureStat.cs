@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
+
 
 [Serializable]
 public class CreatureStat
 {
-    public float BaseValue { get; private set; }
-    private bool _isDirty = true;
+	public float BaseValue { get; private set; }
 
-    [SerializeField]
+	private bool _isDirty = true;
+
+	[SerializeField]
 	private float _value;
 	public virtual float Value
 	{
@@ -26,18 +29,18 @@ public class CreatureStat
 		private set { _value = value; }
 	}
 
-    public List<StatModifier> StatModifiers = new List<StatModifier>();
+	public List<StatModifier> StatModifiers = new List<StatModifier>();
 
-    public CreatureStat()
-    {
-    }
-    
-    public CreatureStat(float baseValue) : this()
+	public CreatureStat()
+	{
+	}
+
+	public CreatureStat(float baseValue) : this()
 	{
 		BaseValue = baseValue;
 	}
 
-    public virtual void AddModifier(StatModifier modifier)
+	public virtual void AddModifier(StatModifier modifier)
 	{
 		_isDirty = true;
 		StatModifiers.Add(modifier);
@@ -54,7 +57,7 @@ public class CreatureStat
 		return false;
 	}
 
-    public virtual bool ClearModifiersFromSource(object source)
+	public virtual bool ClearModifiersFromSource(object source)
 	{
 		int numRemovals = StatModifiers.RemoveAll(mod => mod.Source == source);
 
@@ -74,7 +77,8 @@ public class CreatureStat
 		return (a.Order < b.Order) ? -1 : 1;
 	}
 
-    private float CalculateFinalValue()
+
+	private float CalculateFinalValue()
 	{
 		float finalValue = BaseValue;
 		float sumPercentAdd = 0;
@@ -87,18 +91,18 @@ public class CreatureStat
 
 			switch (modifier.Type)
 			{
-				case Define.EStatModType.Add:
+				case EStatModType.Add:
 					finalValue += modifier.Value;
 					break;
-				case Define.EStatModType.PercentAdd:
+				case EStatModType.PercentAdd:
 					sumPercentAdd += modifier.Value;
-					if (i == StatModifiers.Count - 1 || StatModifiers[i + 1].Type != Define.EStatModType.PercentAdd)
+					if (i == StatModifiers.Count - 1 || StatModifiers[i + 1].Type != EStatModType.PercentAdd)
 					{
 						finalValue *= 1 + sumPercentAdd;
 						sumPercentAdd = 0;
 					}
 					break;
-				case Define.EStatModType.PercentMult:
+				case EStatModType.PercentMult:
 					finalValue *= 1 + modifier.Value;
 					break;
 			}

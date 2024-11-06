@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Freeze : MonoBehaviour
+public class Freeze : CCBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public override bool Init()
+	{
+		if (base.Init() == false)
+			return false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		EffectType = Define.EEffectType.CrowdControl;
+
+		return true;
+	}
+
+	public override void ApplyEffect()
+	{
+		Loop = false;
+		base.ApplyEffect();
+	}
 }

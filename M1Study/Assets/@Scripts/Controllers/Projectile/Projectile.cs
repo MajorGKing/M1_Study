@@ -53,7 +53,7 @@ public class Projectile : BaseObject
 		StraightMotion straightMotion = ProjectileMotion as StraightMotion;
 		if (straightMotion != null)
 			straightMotion.SetInfo(ProjectileData.DataId, owner.CenterPosition, owner.Target.CenterPosition, () => { Managers.Object.Despawn(this); });
-
+		
 		ParabolaMotion parabolaMotion = ProjectileMotion as ParabolaMotion;
 		if (parabolaMotion != null)
 			parabolaMotion.SetInfo(ProjectileData.DataId, owner.CenterPosition, owner.Target.CenterPosition, () => { Managers.Object.Despawn(this); });
@@ -67,10 +67,10 @@ public class Projectile : BaseObject
 		if (target.IsValid() == false)
 			return;
 
-        // TODO
-        target.OnDamaged(Owner, Skill);
-        Managers.Object.Despawn(this);
-    }
+		// TODO
+		target.OnDamaged(Owner, Skill);
+		Managers.Object.Despawn(this);
+	}
 
 	private IEnumerator CoReserveDestroy(float lifeTime)
 	{

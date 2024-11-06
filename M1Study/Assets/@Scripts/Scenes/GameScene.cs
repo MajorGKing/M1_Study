@@ -21,7 +21,6 @@ public class GameScene : BaseScene
 
 		for (int i = 0; i < 1; i++)
 		{
-			//int heroTemplateID = HERO_WIZARD_ID;
 			//int heroTemplateID = HERO_WIZARD_ID + Random.Range(0, 5);
 			int heroTemplateID = HERO_KNIGHT_ID;
 			//int heroTemplateID = HERO_LION_ID;
@@ -31,7 +30,7 @@ public class GameScene : BaseScene
 				continue;
 
 			Hero hero = Managers.Object.Spawn<Hero>(new Vector3Int(1, 0, 0), heroTemplateID);
-			hero.ExtraCells = 0;
+			//hero.ExtraCells = 1;
 			Managers.Map.MoveTo(hero, randCellPos, true);
 		}
 
@@ -41,14 +40,14 @@ public class GameScene : BaseScene
 		Managers.UI.ShowBaseUI<UI_Joystick>();
 
 		{
-			Monster monster = Managers.Object.Spawn<Monster>(new Vector3(1, 1, 0), MONSTER_BEAR_ID);
-			monster.ExtraCells = 1;
-			Managers.Map.MoveTo(monster, new Vector3Int(0, 4, 0), true);
+			//Monster monster = Managers.Object.Spawn<Monster>(new Vector3(1, 1, 0), MONSTER_BEAR_ID);
+			//monster.ExtraCells = 1;
+			//Managers.Map.MoveTo(monster, new Vector3Int(0, 4, 0), true);
 		}
 
 		{
-			// Env env = Managers.Object.Spawn<Env>(new Vector3(0, 2, 0), ENV_TREE1_ID);
-			// env.EnvState = EEnvState.Idle;
+			//Env env = Managers.Object.Spawn<Env>(new Vector3(0, 2, 0), ENV_TREE1_ID);
+			//env.EnvState = EEnvState.Idle;
 		}
 
 		// TODO

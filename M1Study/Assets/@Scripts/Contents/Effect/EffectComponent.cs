@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class EffectComponent : MonoBehaviour
 {
-    public List<EffectBase> ActiveEffects = new List<EffectBase>();
-    private Creature _owner; 
+	public List<EffectBase> ActiveEffects = new List<EffectBase>();
+	private Creature _owner;
 
-    public void SetInfo(Creature Owner)
+	public void SetInfo(Creature Owner)
 	{
 		_owner = Owner;
 	}
 
-    public List<EffectBase> GenerateEffects(IEnumerable<int> effectIds, Define.EEffectSpawnType spawnType, SkillBase skill)
+	public List<EffectBase> GenerateEffects(IEnumerable<int> effectIds, EEffectSpawnType spawnType, SkillBase skill)
 	{
 		List<EffectBase> generatedEffects = new List<EffectBase>();
 
@@ -54,9 +55,9 @@ public class EffectComponent : MonoBehaviour
 	{
 		foreach (var buff in ActiveEffects.ToArray())
 		{
-			if (buff.EffectType != Define.EEffectType.Buff)
+			if (buff.EffectType != EEffectType.Buff)
 			{
-				buff.ClearEffect(Define.EEffectClearType.ClearSkill);
+				buff.ClearEffect(EEffectClearType.ClearSkill);
 			}
 		}
 	}

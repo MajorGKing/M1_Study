@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: Spines
   m_Data:
     m_SerializedData: []
-  m_GUID: 4ecbb0d1b92200f4fbb50659a66140de
+  m_GUID: 104219c8489c7c34bb509ca4cd5aa287
   m_SerializeEntries:
-  - m_GUID: bf9ec093fe189a04d92278eaa0f28574
-    m_Address: goblin_SkeletonData
+  - m_GUID: cfd750e2c65c7944e836f8353fec2cea
+    m_Address: wood_1_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -29,20 +29,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cfd750e2c65c7944e836f8353fec2cea
-    m_Address: wood_1_SkeletonData
+  - m_GUID: bf9ec093fe189a04d92278eaa0f28574
+    m_Address: goblin_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c04a934a0d842c449af7df0ced7349d3
     m_Address: slime_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d89853370f7a3164f99dbc20eea32225
-    m_Address: wood_common_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -59,14 +53,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 378dd7a7a523b164496aa5b261580005
-    m_Address: bear_SkeletonData
+  - m_GUID: d89853370f7a3164f99dbc20eea32225
+    m_Address: wood_common_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d0cc21ba2e5bbd142b438282c9a00598
-    m_Address: heal_1_SkeletonData
+  - m_GUID: 378dd7a7a523b164496aa5b261580005
+    m_Address: bear_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -89,12 +83,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 26f2244b990f5ae459290af6d2a7aa2b
-    m_Address: stun_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb66a3ab50dd92142af4a227daa67639
     m_Address: chloe_skill_1_SkeletonData
     m_ReadOnly: 0
@@ -109,6 +97,48 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f3bb8bb48f0e7346b62204f1fa35dea
     m_Address: debuff_poison_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26f2244b990f5ae459290af6d2a7aa2b
+    m_Address: stun_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0cc21ba2e5bbd142b438282c9a00598
+    m_Address: heal_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 417beed044cd3a04184c7c6caba85ecb
+    m_Address: loren_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b512cac7257e3c04898ae7be6e0db84b
+    m_Address: veti_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16ded4fc60393844ab24e93e03be843d
+    m_Address: loren_skill_2_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9af7977422e9aec43b8a9a1140ccf692
+    m_Address: owen_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd225f6bb768c5444800dfbd27118acd
+    m_Address: owen_skill_2_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -161,50 +191,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 417beed044cd3a04184c7c6caba85ecb
-    m_Address: loren_skill_1_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b512cac7257e3c04898ae7be6e0db84b
-    m_Address: veti_skill_1_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 16ded4fc60393844ab24e93e03be843d
-    m_Address: loren_skill_2_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9af7977422e9aec43b8a9a1140ccf692
-    m_Address: owen_skill_1_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dd225f6bb768c5444800dfbd27118acd
-    m_Address: owen_skill_2_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 52a639e4387c48d439920dd4f04f7dd0
-    m_Address: npc_portal_1_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c34f8e8a3fb833a4c8309493b2f11aa2
-    m_Address: npc_training_SkeletonData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 46b7d6af8ab715b408ef0c1a2b5f639c
-    m_Address: npc_portal_2_SkeletonData
+  - m_GUID: ba99d5d2e0eeab542a19708c34adaaa1
+    m_Address: npc_smith_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -215,15 +203,27 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ba99d5d2e0eeab542a19708c34adaaa1
-    m_Address: npc_smith_SkeletonData
+  - m_GUID: 46b7d6af8ab715b408ef0c1a2b5f639c
+    m_Address: npc_portal_2_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c34f8e8a3fb833a4c8309493b2f11aa2
+    m_Address: npc_training_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52a639e4387c48d439920dd4f04f7dd0
+    m_Address: npc_portal_1_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: a48a0e3bf496b4552b66fe3658998175, type: 2}
+  m_Settings: {fileID: 11400000, guid: 3b34cd1d0f58d714b8b4fcf9c86bdbb4, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 78391e7124dd6de45bddafe255a0ee10, type: 2}
-    - {fileID: 11400000, guid: 4fe0d8d71f2f5dd4f9f37f09f3633f73, type: 2}
+    - {fileID: 11400000, guid: 26444c2ed8af81d44805e10bb2f76d5e, type: 2}
+    - {fileID: 11400000, guid: 4a34936bfeb8ee64a834ca62d49cf283, type: 2}

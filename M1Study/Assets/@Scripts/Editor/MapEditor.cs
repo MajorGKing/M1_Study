@@ -11,10 +11,10 @@ using UnityEditor;
 
 public class MapEditor : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
 	// % (Ctrl), # (Shift), & (Alt)
 	[MenuItem("Tools/GenerateMap %#m")]
-    private static void GenerateMap()
+	private static void GenerateMap()
 	{
 		GameObject[] gameObjects = Selection.gameObjects;
 
@@ -109,6 +109,29 @@ public class MapEditor : MonoBehaviour
 			}
 			AssetDatabase.CreateAsset(customTile, path);
 		}
+		#endregion
+
+		#region Npc
+		//Dictionary<int, Data.NpcData> Npc = LoadJson<Data.NpcDataLoader, int, Data.NpcData>("NpcData").MakeDict();
+		//foreach (var data in Npc.Values)
+		//{
+		//	CustomTile customTile = ScriptableObject.CreateInstance<CustomTile>();
+		//	customTile.Name = data.Name;
+		//	customTile.DataId = data.DataId;
+		//	customTile.ObjectType = Define.EObjectType.Npc;
+		//	string name = $"{data.DataId}_{data.Name}";
+		//	string path = "Assets/@Resources/TileMaps/01_asset/dev/Npc";
+		//	path = Path.Combine(path, $"{name}.Asset");
+
+		//	if (path == "")
+		//		continue;
+
+		//	if (File.Exists(path))
+		//	{
+		//		continue;
+		//	}
+		//	AssetDatabase.CreateAsset(customTile, path);
+		//}
 		#endregion
 	}
 

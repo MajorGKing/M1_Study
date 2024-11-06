@@ -1,19 +1,21 @@
+using Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class EffectBase : BaseObject
 {
-    public Creature Owner;
+	public Creature Owner;
 	public SkillBase Skill;
-    public Data.EffectData EffectData;
-	public Define.EEffectType EffectType;
+	public EffectData EffectData;
+	public EEffectType EffectType;
 
-    protected float Remains { get; set; } = 0;
-	protected Define.EEffectSpawnType _spawnType;
+	protected float Remains { get; set; } = 0;
+	protected EEffectSpawnType _spawnType;
 	protected bool Loop { get; set; } = true;
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -21,7 +23,7 @@ public class EffectBase : BaseObject
 		return true;
 	}
 
-    public virtual void SetInfo(int templateID, Creature owner, Define.EEffectSpawnType spawnType, SkillBase skill)
+	public virtual void SetInfo(int templateID, Creature owner, EEffectSpawnType spawnType, SkillBase skill)
 	{
 		DataTemplateID = templateID;
 		EffectData = Managers.Data.EffectDic[templateID];
@@ -37,10 +39,13 @@ public class EffectBase : BaseObject
 		EffectType = EffectData.EffectType;
 
 		// AoE
-		if (_spawnType == Define.EEffectSpawnType.External)
+		if (_spawnType == EEffectSpawnType.External)
 			Remains = float.MaxValue;
 		else
 			Remains = EffectData.TickTime * EffectData.TickCount;
+
+		// Duration = EffectData.TickTime * EffectData.TickCount;
+		// Period = EffectData.TickTime;
 	}
 
 	public virtual void ApplyEffect()
@@ -49,53 +54,53 @@ public class EffectBase : BaseObject
 		StartCoroutine(CoStartTimer());
 	}
 
-    protected virtual void ShowEffect()
+	protected virtual void ShowEffect()
 	{
 		if (SkeletonAnim != null && SkeletonAnim.skeletonDataAsset != null)
 			PlayAnimation(0, AnimName.IDLE, Loop);
 	}
 
-    protected void AddModifier(CreatureStat stat, object source, int order = 0)
+	protected void AddModifier(CreatureStat stat, object source, int order = 0)
 	{
 		if (EffectData.Amount != 0)
 		{
-			StatModifier add = new StatModifier(EffectData.Amount, Define.EStatModType.Add, order, source);
+			StatModifier add = new StatModifier(EffectData.Amount, EStatModType.Add, order, source);
 			stat.AddModifier(add);
 		}
 
 		if (EffectData.PercentAdd != 0)
 		{
-			StatModifier percentAdd = new StatModifier(EffectData.PercentAdd, Define.EStatModType.PercentAdd, order, source);
+			StatModifier percentAdd = new StatModifier(EffectData.PercentAdd, EStatModType.PercentAdd, order, source);
 			stat.AddModifier(percentAdd);
 		}
 
 		if (EffectData.PercentMult != 0)
 		{
-			StatModifier percentMult = new StatModifier(EffectData.PercentMult, Define.EStatModType.PercentMult, order, source);
+			StatModifier percentMult = new StatModifier(EffectData.PercentMult, EStatModType.PercentMult, order, source);
 			stat.AddModifier(percentMult);
 		}
 	}
 
-    protected void RemoveModifier(CreatureStat stat, object source)
+	protected void RemoveModifier(CreatureStat stat, object source)
 	{
 		stat.ClearModifiersFromSource(source);
 	}
 
-    public virtual bool ClearEffect(Define.EEffectClearType clearType)
+	public virtual bool ClearEffect(EEffectClearType clearType)
 	{
 		Debug.Log($"ClearEffect - {gameObject.name} {EffectData.ClassName} -> {clearType}");
 
 		switch (clearType)
 		{
-			case Define.EEffectClearType.TimeOut:
-			case Define.EEffectClearType.TriggerOutAoE:
-			case Define.EEffectClearType.EndOfAirborne:
+			case EEffectClearType.TimeOut:
+			case EEffectClearType.TriggerOutAoE:
+			case EEffectClearType.EndOfAirborne:
 				Managers.Object.Despawn(this);
 				return true;
 
-			case Define.EEffectClearType.ClearSkill:
+			case EEffectClearType.ClearSkill:
 				// AoE범위 안에 있는경우 해제 X
-				if (_spawnType != Define.EEffectSpawnType.External)
+				if (_spawnType != EEffectSpawnType.External)
 				{
 					Managers.Object.Despawn(this);
 					return true;
@@ -106,12 +111,13 @@ public class EffectBase : BaseObject
 		return false;
 	}
 
-    protected virtual void ProcessDot()
+	protected virtual void ProcessDot()
 	{
 
 	}
 
-    protected virtual IEnumerator CoStartTimer()
+
+	protected virtual IEnumerator CoStartTimer()
 	{
 		float sumTime = 0f;
 
@@ -133,6 +139,6 @@ public class EffectBase : BaseObject
 		}
 
 		Remains = 0;
-		ClearEffect(Define.EEffectClearType.TimeOut);
+		ClearEffect(EEffectClearType.TimeOut);
 	}
 }

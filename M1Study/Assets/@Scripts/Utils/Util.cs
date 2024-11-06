@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 
 public static class Util
@@ -69,38 +70,38 @@ public static class Util
 		return parsedColor;
 	}
 
-	public static Define.EObjectType DetermineTargetType(Define.EObjectType ownerType, bool findAllies)
+	public static EObjectType DetermineTargetType(EObjectType ownerType, bool findAllies)
 	{
 		if (ownerType == Define.EObjectType.Hero)
 		{
-			return findAllies ? Define.EObjectType.Hero : Define.EObjectType.Monster;
+			return findAllies ? EObjectType.Hero : EObjectType.Monster;
 		}
 		else if (ownerType == Define.EObjectType.Monster)
 		{
-			return findAllies ? Define.EObjectType.Monster : Define.EObjectType.Hero;
+			return findAllies ? EObjectType.Monster : EObjectType.Hero;
 		}
 
-		return Define.EObjectType.None;
+		return EObjectType.None;
 	}
 
-	public static float GetEffectRadius(Define.EEffectSize size)
+	public static float GetEffectRadius(EEffectSize size)
 	{
 		switch (size)
 		{
-			case Define.EEffectSize.CircleSmall:
-				return Define.EFFECT_SMALL_RADIUS;
-			case Define.EEffectSize.CircleNormal:
-				return Define.EFFECT_NORMAL_RADIUS;
-			case Define.EEffectSize.CircleBig:
-				return Define.EFFECT_BIG_RADIUS;
-			case Define.EEffectSize.ConeSmall:
-				return Define.EFFECT_SMALL_RADIUS * 2f;
-			case Define.EEffectSize.ConeNormal:
-				return Define.EFFECT_NORMAL_RADIUS * 2f;
-			case Define.EEffectSize.ConeBig:
-				return Define.EFFECT_BIG_RADIUS * 2f;
+			case EEffectSize.CircleSmall:
+				return EFFECT_SMALL_RADIUS;
+			case EEffectSize.CircleNormal:
+				return EFFECT_NORMAL_RADIUS;
+			case EEffectSize.CircleBig:
+				return EFFECT_BIG_RADIUS;
+			case EEffectSize.ConeSmall:
+				return EFFECT_SMALL_RADIUS * 2f;
+			case EEffectSize.ConeNormal:
+				return EFFECT_NORMAL_RADIUS * 2f;
+			case EEffectSize.ConeBig:
+				return EFFECT_BIG_RADIUS * 2f;
 			default:
-				return Define.EFFECT_SMALL_RADIUS;
+				return EFFECT_SMALL_RADIUS;
 		}
 	}
 }

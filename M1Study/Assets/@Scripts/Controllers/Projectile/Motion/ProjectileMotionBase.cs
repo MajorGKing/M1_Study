@@ -5,7 +5,8 @@ using UnityEngine;
 
 public abstract class ProjectileMotionBase : InitBase
 {
-	private Coroutine _coLaunchProjectile;
+	Coroutine _coLaunchProjectile;
+
 	public Vector3 StartPosition { get; private set; }
 	public Vector3 TargetPosition { get; private set; }
 	public bool LookAtTarget { get; private set; }

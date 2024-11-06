@@ -1,5 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using static Define;
+
 
 namespace Data
 {
@@ -30,7 +34,6 @@ namespace Data
 	}
 	#endregion
 
-	
 	#region MonsterData
 	[Serializable]
 	public class MonsterData : CreatureData
@@ -95,7 +98,7 @@ namespace Data
 		public List<int> EffectIds = new List<int>();
 		public int NextLevelId;
 		public int AoEId;
-		public Define.EEffectSize EffectSize;
+		public EEffectSize EffectSize;
 	}
 
 	[Serializable]
@@ -188,7 +191,7 @@ namespace Data
 		public float PercentMult;
 		public float TickTime;
 		public float TickCount;
-		public Define.EEffectType EffectType;
+		public EEffectType EffectType;
 	}
 
 	[Serializable]
@@ -241,7 +244,7 @@ namespace Data
 		public int DataId;
 		public string Name;
 		public string DescriptionTextID;
-		public Define.ENpcType NpcType;
+		public ENpcType NpcType;
 		public string PrefabLabel;
 		public string SpriteName;
 		public string SkeletonDataID;

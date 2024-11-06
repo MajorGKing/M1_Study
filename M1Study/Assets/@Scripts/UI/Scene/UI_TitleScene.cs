@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Define;
 
 public class UI_TitleScene : UI_Scene
 {
-	enum GameObjects
-	{
-		StartImage
-	}
+    enum GameObjects
+    {
+        StartImage
+    }
 
-	enum Texts
-	{
-		DisplayText
-	}
+    enum Texts
+    {
+        DisplayText
+    }
 
-	public override bool Init()
-	{
-		if (base.Init() == false)
-			return false;
+    public override bool Init()
+    {
+        if (base.Init() == false)
+            return false;
 
-		BindObjects(typeof(GameObjects));
-		BindTexts(typeof(Texts));
+        BindObjects(typeof(GameObjects));
+        BindTexts(typeof(Texts));
 
 		GetObject((int)GameObjects.StartImage).BindEvent((evt) =>
 		{
@@ -36,7 +37,7 @@ public class UI_TitleScene : UI_Scene
 		StartLoadAssets();
 
 		return true;
-	}
+    }
 
 	void StartLoadAssets()
 	{
@@ -50,6 +51,8 @@ public class UI_TitleScene : UI_Scene
 
 				GetObject((int)GameObjects.StartImage).gameObject.SetActive(true);
 				GetText((int)Texts.DisplayText).text = "Touch To Start";
+
+
 			}
 		});
 	}

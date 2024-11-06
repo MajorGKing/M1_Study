@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static Define;
 
 public class UI_Joystick : UI_Base
 {
-    enum GameObjects
-    {
-        JoystickBG,
-        JoystickCursor,
-    }
+	enum GameObjects
+	{
+		JoystickBG,
+		JoystickCursor,
+	}
 
-    private GameObject _background;
+	private GameObject _background;
 	private GameObject _cursor;
 	private float _radius;
 	private Vector2 _touchPos;
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -37,7 +39,7 @@ public class UI_Joystick : UI_Base
 		return true;
 	}
 
-    #region Event
+	#region Event
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		_touchPos = Input.mousePosition;
@@ -46,7 +48,7 @@ public class UI_Joystick : UI_Base
 		_background.transform.position = mouseWorldPos;
 		_cursor.transform.position = mouseWorldPos;
 
-		Managers.Game.JoystickState = Define.EJoystickState.PointerDown;
+		Managers.Game.JoystickState = EJoystickState.PointerDown;
 	}
 
 	public void OnPointerUp(PointerEventData eventData)
@@ -55,7 +57,7 @@ public class UI_Joystick : UI_Base
 		_cursor.transform.position = _touchPos;
 
 		Managers.Game.MoveDir = Vector2.zero;
-		Managers.Game.JoystickState = Define.EJoystickState.PointerUp;
+		Managers.Game.JoystickState = EJoystickState.PointerUp;
 	}
 
 	public void OnDrag(PointerEventData eventData)
@@ -65,13 +67,12 @@ public class UI_Joystick : UI_Base
 		float moveDist = Mathf.Min(touchDir.magnitude, _radius);
 		Vector2 moveDir = touchDir.normalized;
 		Vector2 newPosition = _touchPos + moveDir * moveDist;
-		
+
 		Vector2 worldPos = Camera.main.ScreenToWorldPoint(newPosition);
 		_cursor.transform.position = worldPos;
 
 		Managers.Game.MoveDir = moveDir;
-		Managers.Game.JoystickState = Define.EJoystickState.Drag;
+		Managers.Game.JoystickState = EJoystickState.Drag;
 	}
 	#endregion
-
 }

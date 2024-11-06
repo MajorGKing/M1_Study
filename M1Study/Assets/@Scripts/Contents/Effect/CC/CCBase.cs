@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
+
 
 public class CCBase : EffectBase
 {
-	protected Define.ECreatureState lastState;
+	protected ECreatureState lastState;
 
 	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
 
-		EffectType = Define.EEffectType.CrowdControl;
+		EffectType = EEffectType.CrowdControl;
 		return true;
 	}
 
@@ -20,13 +22,13 @@ public class CCBase : EffectBase
 		base.ApplyEffect();
 
 		lastState = Owner.CreatureState;
-		if (lastState == Define.ECreatureState.OnDamaged)
+		if (lastState == ECreatureState.OnDamaged)
 			return;
 
-		Owner.CreatureState = Define.ECreatureState.OnDamaged;
+		Owner.CreatureState = ECreatureState.OnDamaged;
 	}
 
-	public override bool ClearEffect(Define.EEffectClearType clearType)
+	public override bool ClearEffect(EEffectClearType clearType)
 	{
 		if (base.ClearEffect(clearType) == true)
 			Owner.CreatureState = lastState;

@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static Define;
 
 public class PoisonSpreadAoE : AoEBase
 {
-    protected override void OnDisable()
+	protected override void OnDisable()
 	{
 		base.OnDisable();
 		StopAllCoroutines();
 	}
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -19,7 +20,7 @@ public class PoisonSpreadAoE : AoEBase
 		return true;
 	}
 
-    public override void SetInfo(int dataId, BaseObject owner, SkillBase skill)
+	public override void SetInfo(int dataId, BaseObject owner, SkillBase skill)
 	{
 		base.SetInfo(dataId, owner, skill);
 
@@ -30,7 +31,7 @@ public class PoisonSpreadAoE : AoEBase
 		StartCoroutine(CoDetectTargetsPeriodically());
 	}
 
-    private IEnumerator CoDetectTargetsPeriodically()
+	private IEnumerator CoDetectTargetsPeriodically()
 	{
 		while (true)
 		{
@@ -39,7 +40,7 @@ public class PoisonSpreadAoE : AoEBase
 		}
 	}
 
-    private void DetectTargets()
+	private void DetectTargets()
 	{
 		List<Creature> detectedCreatures = new List<Creature>();
 		List<Creature> rangeTargets = Managers.Object.FindCircleRangeTargets(Owner, transform.position, _radius);
@@ -54,7 +55,7 @@ public class PoisonSpreadAoE : AoEBase
 			{
 				_targets.Add(t);
 
-				List<EffectBase> effects = target.Effects.GenerateEffects(_aoEData.EnemyEffects.ToArray(), Define.EEffectSpawnType.External, _skillBase);
+				List<EffectBase> effects = target.Effects.GenerateEffects(_aoEData.EnemyEffects.ToArray(), EEffectSpawnType.External, _skillBase);
 				_activeEffects.AddRange(effects);
 			}
 		}
@@ -70,7 +71,8 @@ public class PoisonSpreadAoE : AoEBase
 			}
 		}
 	}
-    private void RemoveEffect(Creature target)
+
+	private void RemoveEffect(Creature target)
 	{
 		List<EffectBase> effectsToRemove = new List<EffectBase>();
 
@@ -78,7 +80,7 @@ public class PoisonSpreadAoE : AoEBase
 		{
 			if (target.Effects.ActiveEffects.Contains(effect))
 			{
-				effect.ClearEffect(Define.EEffectClearType.TriggerOutAoE);
+				effect.ClearEffect(EEffectClearType.TriggerOutAoE);
 				effectsToRemove.Add(effect);
 			}
 		}

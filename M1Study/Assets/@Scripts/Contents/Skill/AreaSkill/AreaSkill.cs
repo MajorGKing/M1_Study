@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class AreaSkill : SkillBase
 {
-    protected SpellIndicator _indicator;
+	protected SpellIndicator _indicator;
 	protected Vector2 _skillDir;
 	protected Define.EIndicatorType _indicatorType = Define.EIndicatorType.Cone;
 	protected int _angleRange = 360;
 
-    public override void SetInfo(Creature owner, int skillTemplateID)
-    {
-        base.SetInfo(owner, skillTemplateID);
-    }
+	public override void SetInfo(Creature owner, int skillTemplateID)
+	{
+		base.SetInfo(owner, skillTemplateID);
+	}
 
-    public override void DoSkill()
+	public override void DoSkill()
 	{
 		base.DoSkill();
 
@@ -24,13 +24,13 @@ public class AreaSkill : SkillBase
 		_skillDir = (Owner.Target.transform.position - Owner.transform.position).normalized;
 	}
 
-    public override void CancelSkill()
+	public override void CancelSkill()
 	{
 		if (_indicator)
 			_indicator.Cancel();
 	}
 
-    protected void AddIndicatorComponent()
+	protected void AddIndicatorComponent()
 	{
 		_indicator = Util.FindChild<SpellIndicator>(gameObject, recursive: true);
 		if (_indicator == null)
@@ -40,7 +40,7 @@ public class AreaSkill : SkillBase
 		}
 	}
 
-    protected void SpawnSpellIndicator()
+	protected void SpawnSpellIndicator()
 	{
 		if (Owner.Target.IsValid() == false)
 			return;
@@ -48,9 +48,9 @@ public class AreaSkill : SkillBase
 		_indicator.ShowCone(Owner.transform.position, _skillDir.normalized, _angleRange);
 	}
 
-    protected override void OnAttackEvent()
-    {
-        float radius = Util.GetEffectRadius(SkillData.EffectSize);
+	protected override void OnAttackEvent()
+	{
+		float radius = Util.GetEffectRadius(SkillData.EffectSize);
 		List<Creature> targets = Managers.Object.FindConeRangeTargets(Owner, _skillDir, radius, _angleRange);
 
 		foreach (var target in targets)
@@ -60,5 +60,5 @@ public class AreaSkill : SkillBase
 				target.OnDamaged(Owner, this);
 			}
 		}
-    }
+	}
 }

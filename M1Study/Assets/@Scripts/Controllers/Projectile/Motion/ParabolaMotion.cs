@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ParabolaMotion : ProjectileMotionBase
 {
-    public float HeightArc { get; protected set; } = 2;
+	public float HeightArc { get; protected set; } = 2;
 
-    public new void SetInfo(int dataTemplateID, Vector3 startPosition, Vector3 targetPosition, Action endCallback)
-    {
-        base.SetInfo(dataTemplateID, startPosition, targetPosition, endCallback);
-    }
+	public new void SetInfo(int dataTemplateID, Vector3 startPosition, Vector3 targetPosition, Action endCallback)
+	{
+		base.SetInfo(dataTemplateID, startPosition, targetPosition, endCallback);
+	}
 
-    protected override IEnumerator CoLaunchProjectile()
-    {
+	protected override IEnumerator CoLaunchProjectile()
+	{
 		float journeyLength = Vector2.Distance(StartPosition, TargetPosition);
 		float totalTime = journeyLength / ProjectileData.ProjSpeed;
 		float elapsedTime = 0;

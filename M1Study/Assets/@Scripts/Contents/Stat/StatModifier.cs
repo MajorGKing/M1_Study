@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class StatModifier
 {
 	public readonly float Value;
-	public readonly Define.EStatModType Type;
+	public readonly EStatModType Type;
 	public readonly int Order;
 	public readonly object Source;
 
-	public StatModifier(float value, Define.EStatModType type, int order, object source)
+	public StatModifier(float value, EStatModType type, int order, object source)
 	{
 		Value = value;
 		Type = type;
@@ -17,9 +18,9 @@ public class StatModifier
 		Source = source;
 	}
 
-	public StatModifier(float value, Define.EStatModType type) : this(value, type, (int)type, null) { }
+	public StatModifier(float value, EStatModType type) : this(value, type, (int)type, null) { }
 
-	public StatModifier(float value, Define.EStatModType type, int order) : this(value, type, order, null) { }
+	public StatModifier(float value, EStatModType type, int order) : this(value, type, order, null) { }
 
-	public StatModifier(float value, Define.EStatModType type, object source) : this(value, type, (int)type, source) { }
+	public StatModifier(float value, EStatModType type, object source) : this(value, type, (int)type, source) { }
 }

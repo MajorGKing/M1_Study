@@ -18,7 +18,7 @@ public static class Define
 		PointerUp,
 		Drag,
 	}
-	
+
 	public enum EJoystickState
 	{
 		PointerDown,
@@ -32,6 +32,7 @@ public static class Define
 		Effect,
 		Max,
 	}
+
 	public enum EObjectType
 	{
 		None,
@@ -66,7 +67,7 @@ public static class Define
 	}
 
 	public enum EHeroMoveState
-    {
+	{
 		None,
 		TargetMonster,
 		CollectEnv,
@@ -74,8 +75,6 @@ public static class Define
 		ForceMove,
 		ForcePath
 	}
-		
-
 
 	public enum EEnvState
 	{
@@ -174,9 +173,31 @@ public static class Define
 		EndOfAirborne, // 에어본이 끝난 경우 호출되는 종료
 	}
 
+	public enum EEffectClassName
+	{
+		Bleeding,
+		Poison,
+		Ignite,
+		Heal,
+		AttackBuff,
+		MoveSpeedBuff,
+		AttackSpeedBuff,
+		LifeStealBuff,
+		ReduceDmgBuff,
+		ThornsBuff,
+		Knockback,
+		Airborne,
+		PullEffect,
+		Stun,
+		Freeze,
+		CleanDebuff,
+	}
+
+
 	public const float EFFECT_SMALL_RADIUS = 2.5f;
 	public const float EFFECT_NORMAL_RADIUS = 4.5f;
 	public const float EFFECT_BIG_RADIUS = 5.5f;
+
 	public const int CAMERA_PROJECTION_SIZE = 12;
 
 	// HARD CODING
@@ -186,7 +207,7 @@ public static class Define
 	public const int HERO_DEFAULT_RANGED_ATTACK_RANGE = 5;
 	public const float HERO_DEFAULT_STOP_RANGE = 1.5f;
 
-	public const int HERO_DEFAULT_MOVE_DEPTH = 5;
+	public const int HERO_DEFAULT_MOVE_DEPTH = 10;
 	public const int MONSTER_DEFAULT_MOVE_DEPTH = 3;
 
 	public const int HERO_WIZARD_ID = 201000;

@@ -1,6 +1,8 @@
+using Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class AoEBase : BaseObject
 {
@@ -10,14 +12,14 @@ public class AoEBase : BaseObject
 	public Creature Owner;
 	protected HashSet<Creature> _targets = new HashSet<Creature>();
 	protected SkillBase _skillBase;
-	protected Data.AoEData _aoEData;
+	protected AoEData _aoEData;
 	protected Vector3 _skillDir;
 	protected float _radius;
 
-    private CircleCollider2D _collider;
-	private Define.EEffectSize _effectSize;
+	private CircleCollider2D _collider;
+	private EEffectSize _effectSize;
 
-    protected override void OnDisable()
+	protected override void OnDisable()
 	{
 		base.OnDisable();
 
@@ -28,7 +30,7 @@ public class AoEBase : BaseObject
 		foreach (var effect in _activeEffects)
 		{
 			if (effect.IsValid())
-				effect.ClearEffect(Define.EEffectClearType.TriggerOutAoE);
+				effect.ClearEffect(EEffectClearType.TriggerOutAoE);
 		}
 		_activeEffects.Clear();
 	}
@@ -43,7 +45,7 @@ public class AoEBase : BaseObject
 		return true;
 	}
 
-    public virtual void SetInfo(int dataId, BaseObject owner, SkillBase skill)
+	public virtual void SetInfo(int dataId, BaseObject owner, SkillBase skill)
 	{
 		transform.localEulerAngles = Vector3.zero;
 		_aoEData = Managers.Data.AoEDic[dataId];
@@ -55,7 +57,7 @@ public class AoEBase : BaseObject
 		_skillDir = (Owner.Target.transform.position - Owner.transform.position).normalized;
 	}
 
-    protected void ApplyEffectsInRange(int angle)
+	protected void ApplyEffectsInRange(int angle)
 	{
 		// 아군에게 버프 적용
 		var allies = FindTargets(angle, true);
@@ -82,7 +84,7 @@ public class AoEBase : BaseObject
 			if (t.IsValid() == false)
 				continue;
 
-			t.Effects.GenerateEffects(effects, Define.EEffectSpawnType.Skill, _skillBase);
+			t.Effects.GenerateEffects(effects, EEffectSpawnType.Skill, _skillBase);
 
 			if (applyDamage)
 				t.OnDamaged(Owner, _skillBase);
@@ -105,4 +107,5 @@ public class AoEBase : BaseObject
 		Gizmos.color = Color.green;
 		Gizmos.DrawWireSphere(transform.position, 3);
 	}
+
 }

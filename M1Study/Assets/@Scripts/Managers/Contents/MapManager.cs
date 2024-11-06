@@ -5,28 +5,30 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static Define;
+
 
 public class MapManager
 {
-    public GameObject Map { get; private set; }
-    public string MapName { get; private set; }
-    public Grid CellGrid { get; private set; }
+	public GameObject Map { get; private set; }
+	public string MapName { get; private set; }
+	public Grid CellGrid { get; private set; }
 
-    // (CellPos, BaseObject)
+	// (CellPos, BaseObject)
 	Dictionary<Vector3Int, BaseObject> _cells = new Dictionary<Vector3Int, BaseObject>();
 	public StageTransition StageTransition;
 
-    private int MinX;
+	private int MinX;
 	private int MaxX;
 	private int MinY;
 	private int MaxY;
 
-    public Vector3Int World2Cell(Vector3 worldPos) { return CellGrid.WorldToCell(worldPos); }
+	public Vector3Int World2Cell(Vector3 worldPos) { return CellGrid.WorldToCell(worldPos); }
 	public Vector3 Cell2World(Vector3Int cellPos) { return CellGrid.CellToWorld(cellPos); }
 
-    Define.ECellCollisionType[,] _collision;
+	ECellCollisionType[,] _collision;
 
-    public void LoadMap(string mapName)
+	public void LoadMap(string mapName)
 	{
 		DestroyMap();
 
@@ -43,7 +45,7 @@ public class MapManager
 		ParseCollisionData(map, mapName);
 	}
 
-    public void DestroyMap()
+	public void DestroyMap()
 	{
 		ClearObjects();
 
@@ -51,7 +53,7 @@ public class MapManager
 			Managers.Resource.Destroy(Map);
 	}
 
-    void ParseCollisionData(GameObject map, string mapName, string tilemap = "Tilemap_Collision")
+	void ParseCollisionData(GameObject map, string mapName, string tilemap = "Tilemap_Collision")
 	{
 		GameObject collision = Util.FindChild(map, tilemap, true);
 		if (collision != null)
@@ -68,7 +70,7 @@ public class MapManager
 
 		int xCount = MaxX - MinX + 1;
 		int yCount = MaxY - MinY + 1;
-		_collision = new Define.ECellCollisionType[xCount, yCount];
+		_collision = new ECellCollisionType[xCount, yCount];
 
 		for (int y = 0; y < yCount; y++)
 		{
@@ -78,20 +80,20 @@ public class MapManager
 				switch (line[x])
 				{
 					case Define.MAP_TOOL_WALL:
-						_collision[x, y] = Define.ECellCollisionType.Wall;
+						_collision[x, y] = ECellCollisionType.Wall;
 						break;
 					case Define.MAP_TOOL_NONE:
-						_collision[x, y] = Define.ECellCollisionType.None;
+						_collision[x, y] = ECellCollisionType.None;
 						break;
 					case Define.MAP_TOOL_SEMI_WALL:
-						_collision[x, y] = Define.ECellCollisionType.SemiWall;
+						_collision[x, y] = ECellCollisionType.SemiWall;
 						break;
 				}
 			}
 		}
 	}
 
-    public bool MoveTo(Creature obj, Vector3Int cellPos, bool forceMove = false)
+	public bool MoveTo(Creature obj, Vector3Int cellPos, bool forceMove = false)
 	{
 		if (CanGo(obj, cellPos) == false)
 			return false;
@@ -111,7 +113,7 @@ public class MapManager
 		return true;
 	}
 
-    #region Helpers
+	#region Helpers
 	public List<T> GatherObjects<T>(Vector3 pos, float rangeX, float rangeY) where T : BaseObject
 	{
 		HashSet<T> objects = new HashSet<T>();
@@ -142,8 +144,8 @@ public class MapManager
 
 		return objects.ToList();
 	}
-	
-    public BaseObject GetObject(Vector3Int cellPos)
+
+	public BaseObject GetObject(Vector3Int cellPos)
 	{
 		// 없으면 null
 		_cells.TryGetValue(cellPos, out BaseObject value);
@@ -156,9 +158,9 @@ public class MapManager
 		return GetObject(cellPos);
 	}
 
-    private void RemoveObject(BaseObject obj)
-    {
-        // 기존의 좌표 제거
+	void RemoveObject(BaseObject obj)
+	{
+		// 기존의 좌표 제거
 		int extraCells = 0;
 		if (obj != null)
 			extraCells = obj.ExtraCells;
@@ -176,9 +178,9 @@ public class MapManager
 					_cells[newCellPos] = null;
 			}
 		}
-    }
+	}
 
-    private void AddObject(BaseObject obj, Vector3Int cellPos)
+	void AddObject(BaseObject obj, Vector3Int cellPos)
 	{
 		int extraCells = 0;
 		if (obj != null)
@@ -199,12 +201,12 @@ public class MapManager
 		}
 	}
 
-    public bool CanGo(BaseObject self, Vector3 worldPos, bool ignoreObjects = false, bool ignoreSemiWall = false)
+	public bool CanGo(BaseObject self, Vector3 worldPos, bool ignoreObjects = false, bool ignoreSemiWall = false)
 	{
 		return CanGo(self, World2Cell(worldPos), ignoreObjects, ignoreSemiWall);
 	}
 
-    public bool CanGo(BaseObject self, Vector3Int cellPos, bool ignoreObjects = false, bool ignoreSemiWall = false)
+	public bool CanGo(BaseObject self, Vector3Int cellPos, bool ignoreObjects = false, bool ignoreSemiWall = false)
 	{
 		int extraCells = 0;
 		if (self != null)
@@ -240,23 +242,24 @@ public class MapManager
 
 		int x = cellPos.x - MinX;
 		int y = MaxY - cellPos.y;
-		Define.ECellCollisionType type = _collision[x, y];
-		if (type == Define.ECellCollisionType.None)
+		ECellCollisionType type = _collision[x, y];
+		if (type == ECellCollisionType.None)
 			return true;
 
-		if (ignoreSemiWall && type == Define.ECellCollisionType.SemiWall)
+		if (ignoreSemiWall && type == ECellCollisionType.SemiWall)
 			return true;
 
 		return false;
 	}
-    
-    public void ClearObjects()
+
+	public void ClearObjects()
 	{
 		_cells.Clear();
 	}
-    #endregion
 
-    #region A* PathFinding
+	#endregion
+
+	#region A* PathFinding
 	public struct PQNode : IComparable<PQNode>
 	{
 		public int H; // Heuristic
@@ -382,6 +385,6 @@ public class MapManager
 
 		return cells;
 	}
-	#endregion
 
+	#endregion
 }

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class Env : BaseObject
 {
-    private Data.EnvData _data;
-    private Define.EEnvState _envState = Define.EEnvState.Idle;
+	private Data.EnvData _data;
 
-    public Define.EEnvState EnvState
+	private Define.EEnvState _envState = Define.EEnvState.Idle;
+	public Define.EEnvState EnvState
 	{
 		get { return _envState; }
 		set
@@ -16,12 +17,13 @@ public class Env : BaseObject
 			UpdateAnimation();
 		}
 	}
-    #region Stat
+
+	#region Stat
 	public float Hp { get; set; }
 	public float MaxHp { get; set; }
 	#endregion
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -31,7 +33,7 @@ public class Env : BaseObject
 		return true;
 	}
 
-    public void SetInfo(int templateID)
+	public void SetInfo(int templateID)
 	{
 		DataTemplateID = templateID;
 		_data = Managers.Data.EnvDic[templateID];
@@ -45,7 +47,7 @@ public class Env : BaseObject
 		SetSpineAnimation(ranSpine, SortingLayers.ENV);
 	}
 
-    protected override void UpdateAnimation()
+	protected override void UpdateAnimation()
 	{
 		switch (EnvState)
 		{
@@ -65,15 +67,15 @@ public class Env : BaseObject
 
 	public override void OnDamaged(BaseObject attacker, SkillBase skill)
 	{
-		if (EnvState == Define.EEnvState.Dead)
+		if (EnvState == EEnvState.Dead)
 			return;
 
 		base.OnDamaged(attacker, skill);
 
 		float finalDamage = 1;
-		EnvState = Define.EEnvState.OnDamaged;
+		EnvState = EEnvState.OnDamaged;
 
-		Managers.Object.ShowDamageFont(CenterPosition, finalDamage, transform, false);
+		Managers.Object.ShowDamageFont(CenterPosition, finalDamage, transform);
 
 		Hp = Mathf.Clamp(Hp - finalDamage, 0, MaxHp);
 		if (Hp <= 0)
@@ -84,10 +86,11 @@ public class Env : BaseObject
 	{
 		base.OnDead(attacker, skill);
 
-		EnvState = Define.EEnvState.Dead;
+		EnvState = EEnvState.Dead;
 
 		// TODO : Drop Item	
 
 		Managers.Object.Despawn(this);
 	}
+
 }

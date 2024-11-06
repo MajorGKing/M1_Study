@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using System.Linq;
 using Unity.Plastic.Newtonsoft.Json;
+using Data;
 using System;
 using System.Reflection;
 using System.Collections;
@@ -15,16 +16,14 @@ public class DataTransformer : EditorWindow
 	[MenuItem("Tools/ParseExcel %#K")]
 	public static void ParseExcelDataToJson()
 	{
-		ParseExcelDataToJson<Data.MonsterDataLoader, Data.MonsterData>("Monster");
-		ParseExcelDataToJson<Data.HeroDataLoader, Data.HeroData>("Hero");
-		ParseExcelDataToJson<Data.SkillDataLoader, Data.SkillData>("Skill");
-		ParseExcelDataToJson<Data.ProjectileDataLoader, Data.ProjectileData>("Projectile");
-		ParseExcelDataToJson<Data.EnvDataLoader, Data.EnvData>("Env");
-		ParseExcelDataToJson<Data.EffectDataLoader, Data.EffectData>("Effect");
-		ParseExcelDataToJson<Data.AoEDataLoader, Data.AoEData>("AoE");
-		ParseExcelDataToJson<Data.NpcDataLoader, Data.NpcData>("Npc");
-		
-		//LEGACY_ParseTestData("Test");
+		ParseExcelDataToJson<MonsterDataLoader, MonsterData>("Monster");
+		ParseExcelDataToJson<HeroDataLoader, HeroData>("Hero");
+		ParseExcelDataToJson<SkillDataLoader, SkillData>("Skill");
+		ParseExcelDataToJson<ProjectileDataLoader, ProjectileData>("Projectile");
+		ParseExcelDataToJson<EnvDataLoader, EnvData>("Env");
+		ParseExcelDataToJson<EffectDataLoader, EffectData>("Effect");
+		ParseExcelDataToJson<AoEDataLoader, AoEData>("AoE");
+		ParseExcelDataToJson<NpcDataLoader, NpcData>("Npc");
 
 		Debug.Log("DataTransformer Completed");
 	}

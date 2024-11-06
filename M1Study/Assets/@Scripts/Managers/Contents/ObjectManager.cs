@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Define;
 
 public class ObjectManager
 {
-    public HashSet<Hero> Heroes { get; } = new HashSet<Hero>();
+	public HashSet<Hero> Heroes { get; } = new HashSet<Hero>();
 	public HashSet<Monster> Monsters { get; } = new HashSet<Monster>();
 	public HashSet<Projectile> Projectiles { get; } = new HashSet<Projectile>();
 	public HashSet<Env> Envs { get; } = new HashSet<Env>();
@@ -14,17 +15,17 @@ public class ObjectManager
 	public HeroCamp Camp { get; private set; }
 	public HashSet<Npc> Npcs { get; } = new HashSet<Npc>();
 
-    #region Roots
-    public Transform GetRootTransform(string name)
-    {
-        GameObject root = GameObject.Find(name);
+	#region Roots
+	public Transform GetRootTransform(string name)
+	{
+		GameObject root = GameObject.Find(name);
 		if (root == null)
 			root = new GameObject { name = name };
 
 		return root.transform;
-    }
+	}
 
-    public Transform HeroRoot { get { return GetRootTransform("@Heroes"); } }
+	public Transform HeroRoot { get { return GetRootTransform("@Heroes"); } }
 	public Transform MonsterRoot { get { return GetRootTransform("@Monsters"); } }
 	public Transform ProjectileRoot { get { return GetRootTransform("@Projectiles"); } }
 	public Transform EnvRoot { get { return GetRootTransform("@Envs"); } }
@@ -39,12 +40,6 @@ public class ObjectManager
 		damageText.SetInfo(position, damage, parent, isCritical);
 	}
 
-	public T Spawn<T>(Vector3Int cellPos, int templateID) where T : BaseObject
-	{
-		Vector3 spawnPos = Managers.Map.Cell2World(cellPos);
-		return Spawn<T>(spawnPos, templateID);
-	}
-
 	public GameObject SpawnGameObject(Vector3 position, string prefabName)
 	{
 		GameObject go = Managers.Resource.Instantiate(prefabName, pooling: true);
@@ -52,31 +47,37 @@ public class ObjectManager
 		return go;
 	}
 
-    public T Spawn<T>(Vector3 position, int templateID) where T : BaseObject
-    {
-        string prefabName = typeof(T).Name;
+	public T Spawn<T>(Vector3Int cellPos, int templateID) where T : BaseObject
+	{
+		Vector3 spawnPos = Managers.Map.Cell2World(cellPos);
+		return Spawn<T>(spawnPos, templateID);
+	}
 
-        GameObject go = Managers.Resource.Instantiate(prefabName);
-        go.name = prefabName;
+	public T Spawn<T>(Vector3 position, int templateID) where T : BaseObject
+	{
+		string prefabName = typeof(T).Name;
+
+		GameObject go = Managers.Resource.Instantiate(prefabName);
+		go.name = prefabName;
 		go.transform.position = position;
 
-        BaseObject obj = go.GetComponent<BaseObject>();
+		BaseObject obj = go.GetComponent<BaseObject>();
 
-		if (obj.ObjectType == Define.EObjectType.Hero)
+		if (obj.ObjectType == EObjectType.Hero)
 		{
 			obj.transform.parent = HeroRoot;
 			Hero hero = go.GetComponent<Hero>();
 			Heroes.Add(hero);
 			hero.SetInfo(templateID);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Monster)
+		else if (obj.ObjectType == EObjectType.Monster)
 		{
 			obj.transform.parent = HeroRoot;
 			Monster monster = go.GetComponent<Monster>();
 			Monsters.Add(monster);
 			monster.SetInfo(templateID);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Projectile)
+		else if (obj.ObjectType == EObjectType.Projectile)
 		{
 			obj.transform.parent = ProjectileRoot;
 
@@ -85,7 +86,7 @@ public class ObjectManager
 
 			projectile.SetInfo(templateID);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Env)
+		else if (obj.ObjectType == EObjectType.Env)
 		{
 			obj.transform.parent = EnvRoot;
 
@@ -94,11 +95,11 @@ public class ObjectManager
 
 			env.SetInfo(templateID);
 		}
-		else if (obj.ObjectType == Define.EObjectType.HeroCamp)
+		else if (obj.ObjectType == EObjectType.HeroCamp)
 		{
 			Camp = go.GetComponent<HeroCamp>();
 		}
-		else if (obj.ObjectType == Define.EObjectType.Npc)
+		else if (obj.ObjectType == EObjectType.Npc)
 		{
 			obj.transform.parent = NpcRoot;
 
@@ -109,42 +110,42 @@ public class ObjectManager
 		}
 
 		return obj as T;
-    }
+	}
 
 	public void Despawn<T>(T obj) where T : BaseObject
 	{
-		Define.EObjectType objectType = obj.ObjectType;
+		EObjectType objectType = obj.ObjectType;
 
-		if (obj.ObjectType == Define.EObjectType.Hero)
+		if (obj.ObjectType == EObjectType.Hero)
 		{
 			Hero hero = obj.GetComponent<Hero>();
 			Heroes.Remove(hero);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Monster)
+		else if (obj.ObjectType == EObjectType.Monster)
 		{
 			Monster monster = obj.GetComponent<Monster>();
 			Monsters.Remove(monster);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Projectile)
+		else if (obj.ObjectType == EObjectType.Projectile)
 		{
 			Projectile projectile = obj as Projectile;
 			Projectiles.Remove(projectile);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Env)
+		else if (obj.ObjectType == EObjectType.Env)
 		{
 			Env env = obj as Env;
 			Envs.Remove(env);
 		}
-		else if (obj.ObjectType == Define.EObjectType.Effect)
+		else if (obj.ObjectType == EObjectType.Effect)
 		{
 			EffectBase effect = obj as EffectBase;
 			Effects.Remove(effect);
-	}
-		else if (obj.ObjectType == Define.EObjectType.HeroCamp)
+		}
+		else if (obj.ObjectType == EObjectType.HeroCamp)
 		{
 			Camp = null;
 		}
-		else if (obj.ObjectType == Define.EObjectType.Npc)
+		else if (obj.ObjectType == EObjectType.Npc)
 		{
 			Npc npc = obj as Npc;
 			Npcs.Remove(npc);
@@ -159,14 +160,14 @@ public class ObjectManager
 		HashSet<Creature> targets = new HashSet<Creature>();
 		HashSet<Creature> ret = new HashSet<Creature>();
 
-		Define.EObjectType targetType = Util.DetermineTargetType(owner.ObjectType, isAllies);
+		EObjectType targetType = Util.DetermineTargetType(owner.ObjectType, isAllies);
 
-		if (targetType == Define.EObjectType.Monster)
+		if (targetType == EObjectType.Monster)
 		{
 			var objs = Managers.Map.GatherObjects<Monster>(owner.transform.position, range, range);
 			targets.AddRange(objs);
 		}
-		else if (targetType == Define.EObjectType.Hero)
+		else if (targetType == EObjectType.Hero)
 		{
 			var objs = Managers.Map.GatherObjects<Hero>(owner.transform.position, range, range);
 			targets.AddRange(objs);
@@ -205,14 +206,14 @@ public class ObjectManager
 		HashSet<Creature> targets = new HashSet<Creature>();
 		HashSet<Creature> ret = new HashSet<Creature>();
 
-		Define.EObjectType targetType = Util.DetermineTargetType(owner.ObjectType, isAllies);
+		EObjectType targetType = Util.DetermineTargetType(owner.ObjectType, isAllies);
 
-		if (targetType == Define.EObjectType.Monster)
+		if (targetType == EObjectType.Monster)
 		{
 			var objs = Managers.Map.GatherObjects<Monster>(owner.transform.position, range, range);
 			targets.AddRange(objs);
 		}
-		else if (targetType == Define.EObjectType.Hero)
+		else if (targetType == EObjectType.Hero)
 		{
 			var objs = Managers.Map.GatherObjects<Hero>(owner.transform.position, range, range);
 			targets.AddRange(objs);
@@ -230,6 +231,5 @@ public class ObjectManager
 
 		return ret.ToList();
 	}
-
 	#endregion
 }

@@ -10,8 +10,6 @@ public class CameraController : InitBase
 		get { return _target; }
 		set { _target = value; }
 	}
-    
-
 
 	public override bool Init()
 	{

@@ -1,17 +1,18 @@
+using Data;
 using System.Collections;
 using System.Collections.Generic;
-using Data;
 using UnityEngine;
+using static Define;
 
 public class SpellIndicator : BaseObject
 {
-    private Creature _owner;
-	private Data.SkillData _skillData;
-	private Define.EIndicatorType _indicatorType = Define.EIndicatorType.Cone;
+	private Creature _owner;
+	private SkillData _skillData;
+	private EIndicatorType _indicatorType = EIndicatorType.Cone;
 
 	private SpriteRenderer _coneSprite;
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -22,36 +23,36 @@ public class SpellIndicator : BaseObject
 		return true;
 	}
 
-    protected override void OnDisable() 
-    {
-        base.OnDisable();
+	protected override void OnDisable()
+	{
+		base.OnDisable();
 
-        Cancel();    
-    }
+		Cancel();
+	}
 
-    public void SetInfo(Creature owner, SkillData skillData, Define.EIndicatorType type)
-    {
-        _skillData = skillData;
-        _indicatorType = type;
-        _owner = owner;
+	public void SetInfo(Creature owner, SkillData skillData, EIndicatorType type)
+	{
+		_skillData = skillData;
+		_indicatorType = type;
+		_owner = owner;
 
-        _coneSprite.gameObject.SetActive(false);
+		_coneSprite.gameObject.SetActive(false);
 
 		_coneSprite.material.SetFloat("_Angle", 0);
 		_coneSprite.material.SetFloat("_Duration", 0);
-    }
+	}
 
-    public void ShowCone(Vector3 startPos, Vector3 dir, float angleRange)
-    {
-        _coneSprite.gameObject.SetActive(true);
-        transform.position = startPos;
-        _coneSprite.material.SetFloat("_Angle", angleRange);
-        _coneSprite.transform.localScale = Vector3.one * _skillData.SkillRange;
-        transform.eulerAngles = GetLookAtRotation(dir);
-        StartCoroutine(SetConeFill());
-    }
+	public void ShowCone(Vector3 startPos, Vector3 dir, float angleRange)
+	{
+		_coneSprite.gameObject.SetActive(true);
+		transform.position = startPos;
+		_coneSprite.material.SetFloat("_Angle", angleRange);
+		_coneSprite.transform.localScale = Vector3.one * _skillData.SkillRange;
+		transform.eulerAngles = GetLookAtRotation(dir);
+		StartCoroutine(SetConeFill());
+	}
 
-    private IEnumerator SetConeFill()
+	private IEnumerator SetConeFill()
 	{
 		// AnimImpactDuration 속도에 맞춰서 Fill
 		float elapsedTime = 0f;
@@ -68,8 +69,7 @@ public class SpellIndicator : BaseObject
 		_coneSprite.gameObject.SetActive(false);
 	}
 
-
-    public void Cancel()
+	public void Cancel()
 	{
 		StopAllCoroutines();
 		_coneSprite.gameObject.SetActive(false);

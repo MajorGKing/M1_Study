@@ -1,27 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using Spine;
 using Spine.Unity;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static Define;
 
 public class BaseObject : InitBase
 {
 	public int ExtraCells { get; set; } = 0;
-	
-    public Define.EObjectType ObjectType { get; protected set; } = Define.EObjectType.None;
+
+	public EObjectType ObjectType { get; protected set; } = EObjectType.None;
 	public CircleCollider2D Collider { get; private set; }
 	public SkeletonAnimation SkeletonAnim { get; private set; }
 	public Rigidbody2D RigidBody { get; private set; }
 	private HurtFlashEffect HurtFlash;
 
-	//public float ColliderRadius { get { return Collider?.radius ?? 0.0f; } }
 	public float ColliderRadius { get { return Collider != null ? Collider.radius : 0.0f; } }
 	public Vector3 CenterPosition { get { return transform.position + Vector3.up * ColliderRadius; } }
 
-	public int DataTemplateID{get; set;}
+	public int DataTemplateID { get; set; }
 
-    private bool _lookLeft = true;
+	bool _lookLeft = true;
 	public bool LookLeft
 	{
 		get { return _lookLeft; }
@@ -32,7 +32,7 @@ public class BaseObject : InitBase
 		}
 	}
 
-    public override bool Init()
+	public override bool Init()
 	{
 		if (base.Init() == false)
 			return false;
@@ -54,8 +54,6 @@ public class BaseObject : InitBase
 
 		SkeletonAnim.AnimationState.Event -= OnAnimEventHandler;
 	}
-
-
 
 	public void LookAtTarget(BaseObject target)
 	{
@@ -108,6 +106,7 @@ public class BaseObject : InitBase
 		SortingGroup sg = Util.GetOrAddComponent<SortingGroup>(gameObject);
 		sg.sortingOrder = sortingOrder;
 	}
+
 	protected virtual void UpdateAnimation()
 	{
 	}
@@ -127,7 +126,7 @@ public class BaseObject : InitBase
 		return entry;
 	}
 
-    public void AddAnimation(int trackIndex, string AnimName, bool loop, float delay)
+	public void AddAnimation(int trackIndex, string AnimName, bool loop, float delay)
 	{
 		if (SkeletonAnim == null)
 			return;
@@ -135,7 +134,7 @@ public class BaseObject : InitBase
 		SkeletonAnim.AnimationState.AddAnimation(trackIndex, AnimName, loop, delay);
 	}
 
-    public void Flip(bool flag)
+	public void Flip(bool flag)
 	{
 		if (SkeletonAnim == null)
 			return;
@@ -145,12 +144,13 @@ public class BaseObject : InitBase
 
 	public virtual void OnAnimEventHandler(TrackEntry trackEntry, Spine.Event e)
 	{
-		//Debug.Log("OnAnimEventHandler");
+		Debug.Log("OnAnimEventHandler");
 	}
 	#endregion
 
 	#region Map
 	public bool LerpCellPosCompleted { get; protected set; }
+
 	Vector3Int _cellPos;
 	public Vector3Int CellPos
 	{
