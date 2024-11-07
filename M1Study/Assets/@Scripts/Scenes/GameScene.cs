@@ -52,6 +52,8 @@ public class GameScene : BaseScene
 
 		// TODO
 
+		Managers.UI.CacheAllPopups();
+
 		return true;
 	}
 
