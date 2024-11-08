@@ -16,25 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 784a07d8e1c6aa6498317919c6109520
-  m_SerializeEntries:
-  - m_GUID: 7f2b74ba02d5e81418accf0883976a76
-    m_Address: UI_NpcInteraction
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 78ca2376289192c4c96599cd00af2819
-    m_Address: UI_StageItem
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d56f664cd78a0574588a42cb202beee3
-    m_Address: UI_WaypointPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3b34cd1d0f58d714b8b4fcf9c86bdbb4, type: 2}
   m_SchemaSet:
