@@ -164,6 +164,9 @@ public class Monster : Creature
 			itemHolder.SetInfo(0, rewardData.ItemTemplateId, dropPos);
 		}
 
+		// Broadcast
+		Managers.Game.BroadcastEvent(EBroadcastEventType.KillMonster, MonsterData.DataId);
+
 		Managers.Object.Despawn(this);
 	}
 	#endregion
