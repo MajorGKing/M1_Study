@@ -18,9 +18,7 @@ public class GameSaveData
 
 	public int ItemDbIdGenerator = 1;
 	public List<ItemSaveData> Items= new List<ItemSaveData>();
-	public List<QuestSaveData> ProcessingQuests = new List<QuestSaveData>(); // 진행중
-	public List<QuestSaveData> CompletedQuests = new List<QuestSaveData>(); // 완료
-	public List<QuestSaveData> RewardedQuests = new List<QuestSaveData>(); // 보상 받음
+	public List<QuestSaveData> AllQuests = new List<QuestSaveData>();
 }
 
 [Serializable]
@@ -231,18 +229,18 @@ public class GameManager
 
 		// Quest
 		{
-			SaveData.ProcessingQuests.Clear();
-			SaveData.CompletedQuests.Clear();
-			SaveData.RewardedQuests.Clear();
+			// SaveData.ProcessingQuests.Clear();
+			// SaveData.CompletedQuests.Clear();
+			// SaveData.RewardedQuests.Clear();
 
-			foreach (Quest item in Managers.Quest.ProcessingQuests)
-				SaveData.ProcessingQuests.Add(item.SaveData);
+			// foreach (Quest item in Managers.Quest.ProcessingQuests)
+			// 	SaveData.ProcessingQuests.Add(item.SaveData);
 
-			foreach (Quest item in Managers.Quest.CompletedQuests)
-				SaveData.CompletedQuests.Add(item.SaveData);
+			// foreach (Quest item in Managers.Quest.CompletedQuests)
+			// 	SaveData.CompletedQuests.Add(item.SaveData);
 
-			foreach (Quest item in Managers.Quest.RewardedQuests)
-				SaveData.RewardedQuests.Add(item.SaveData);
+			// foreach (Quest item in Managers.Quest.RewardedQuests)
+			// 	SaveData.RewardedQuests.Add(item.SaveData);
 		}
 
 		string jsonStr = JsonUtility.ToJson(Managers.Game.SaveData);
@@ -275,24 +273,24 @@ public class GameManager
 
 		// Quest
 		{
-			Managers.Quest.Clear();
+			// Managers.Quest.Clear(); 
 
-			foreach (QuestSaveData questSaveData in data.ProcessingQuests)
-			{
-				Managers.Quest.AddQuest(questSaveData);
-			}
+			// foreach (QuestSaveData questSaveData in data.ProcessingQuests)
+			// {
+			// 	Managers.Quest.AddQuest(questSaveData);
+			// }
 
-			foreach (QuestSaveData questSaveData in data.CompletedQuests)
-			{
-				Managers.Quest.AddQuest(questSaveData);
-			}
+			// foreach (QuestSaveData questSaveData in data.CompletedQuests)
+			// {
+			// 	Managers.Quest.AddQuest(questSaveData);
+			// }
 
-			foreach (QuestSaveData questSaveData in data.RewardedQuests)
-			{
-				Managers.Quest.AddQuest(questSaveData);
-			}
+			// foreach (QuestSaveData questSaveData in data.RewardedQuests)
+			// {
+			// 	Managers.Quest.AddQuest(questSaveData);
+			// }
 
-			Managers.Quest.AddUnknownQuests();
+			// Managers.Quest.AddUnknownQuests();
 		}
 
 		Debug.Log($"Save Game Loaded : {Path}");

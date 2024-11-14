@@ -48,13 +48,21 @@ public static class Define
 
 	public enum ENpcType
 	{
-		Camp,
+		None,
+		StartPosition,
+		Guild,
 		Portal,
 		Waypoint,
 		BlackSmith,
-		Guild,
+		Training,
 		TreasureBox,
-		Dungeon
+		Dungeon,
+		Quest,
+		GoldStorage,
+		WoodStorage,
+		MineralStorage,
+		Exchange,
+		RuneStone,
 	}
 
 	public enum ECreatureState
@@ -294,7 +302,9 @@ public static class Define
 		SpendGold,
 		UseItem,
 		Survival,
+		ClearDungeon
 	}
+	
 	public enum EQuestRewardType
 	{
 		Hero,
@@ -319,8 +329,14 @@ public static class Define
 		ChangeWood,
 		ChangeMineral,
 		ChangeGold,
+		ChangeDia,
+		ChangeMaterials,
 		KillMonster,
 		LevelUp,
+		DungeonClear,
+		ChangeInventory,
+		ChangeCrew,
+		QuestClear,
 	}
 
 

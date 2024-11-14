@@ -3,28 +3,6 @@ using System.Collections.Generic;
 using Data;
 using UnityEngine;
 
-public class QuestTask
-{
-    public QuestTaskData _questTaskData;
-    public int Count { get; set; }
-
-    public QuestTask(QuestTaskData questTaskData)
-	{
-		_questTaskData = questTaskData;
-	}
-
-	public bool IsCompleted()
-	{
-		// TODO
-		return false;
-	}
-
-    public void OnHandleBroadcastEvent(Define.EBroadcastEventType eventType, int value)
-	{
-		// _questTaskData.ObjectiveType와 eventType 비교
-	}
-}
-
 public class Quest
 {
     public QuestSaveData SaveData { get; set; }

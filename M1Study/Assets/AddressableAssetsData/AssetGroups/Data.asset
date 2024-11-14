@@ -101,6 +101,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46499a552b96c49aca8002c7cf35df87
+    m_Address: QuestData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3b34cd1d0f58d714b8b4fcf9c86bdbb4, type: 2}
   m_SchemaSet:
