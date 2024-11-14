@@ -13,7 +13,7 @@ public class QuestManager
 	public List<Quest> CompletedQuests { get; } = new List<Quest>();
 	public List<Quest> RewardedQuests { get; } = new List<Quest>();
 
-    public QuestManager()
+    public void Init()
 	{
 		Managers.Game.OnBroadcastEvent -= OnHandleBroadcastEvent;
 		Managers.Game.OnBroadcastEvent += OnHandleBroadcastEvent;
