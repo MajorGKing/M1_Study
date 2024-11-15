@@ -5,9 +5,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 
+public interface INpcInteraction
+{
+	public void SetInfo(Npc owner);
+	public void HandleOnClickEvent();
+	public bool CanInteract();
+}
+
 public class Npc : BaseObject
 {
 	public NpcData Data { get; set; }
+	public ENpcType NpcType { get { return Data.NpcType; } }
+
+	public INpcInteraction Interaction { get; private set; }
 
 	private SkeletonAnimation _skeletonAnim;
 	private UI_NpcInteraction _ui;
@@ -21,10 +31,24 @@ public class Npc : BaseObject
 		return true;
 	}
 
+	private void Update()
+	{
+		if (Interaction != null && Interaction.CanInteract())
+		{
+			_ui.gameObject.SetActive(true);
+		}
+		else
+		{
+			_ui.gameObject.SetActive(false);
+		}
+	}
+
 	public void SetInfo(int dataId)
 	{
 		Data = Managers.Data.NpcDic[dataId];
 		gameObject.name = $"{Data.DataId}_{Data.Name}";
+
+		Debug.Log(gameObject.name);
 
 		#region Spine Animation
 		SetSpineAnimation(Data.SkeletonDataID, SortingLayers.NPC);
@@ -36,5 +60,19 @@ public class Npc : BaseObject
 		button.transform.localPosition = new Vector3(0f, 3f);
 		_ui = button.GetComponent<UI_NpcInteraction>();
 		_ui.SetInfo(DataTemplateID, this);
+
+		switch (Data.NpcType)
+		{
+			case ENpcType.Quest:
+				Interaction = new QuestInteraction();
+				break;
+		}
+
+		Interaction?.SetInfo(this);
+	}
+
+	public virtual void OnClickEvent()
+	{
+		Interaction?.HandleOnClickEvent();
 	}
 }

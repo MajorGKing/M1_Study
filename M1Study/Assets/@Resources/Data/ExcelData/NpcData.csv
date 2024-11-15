@@ -1,5 +1,5 @@
 ﻿DataId,Name,DescriptionTextID,NpcType,PrefabLabel,IconSpriteName,SkeletonDataID,QuestDataId
-500001,챕터1캠프,,Guild,NpcPrefab,npc_camp_base.sprite,camp_SkeletonData,
+500001,챕터1캠프,,Guild,NpcPrefab,npc_camp_base.sprite,npc_camp_SkeletonData,
 500002,챕터1포탈,,Portal,NpcPrefab,portal_a_effect_1.sprite,npc_portal_2_SkeletonData,
 500003,챕터1웨이포인트,,Waypoint,NpcPrefab,potal_body.sprite,npc_portal_1_SkeletonData,
 500004,챕터1대장간,,BlackSmith,NpcPrefab,smith_body.sprite,npc_smith_SkeletonData,

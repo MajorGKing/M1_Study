@@ -7,7 +7,7 @@
       "NpcType": 2,
       "PrefabLabel": "NpcPrefab",
       "SpriteName": "npc_camp_base.sprite",
-      "SkeletonDataID": "camp_SkeletonData",
+      "SkeletonDataID": "npc_camp_SkeletonData",
       "QuestDataId": 0
     },
     {
