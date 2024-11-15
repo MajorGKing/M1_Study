@@ -48,8 +48,6 @@ public class Npc : BaseObject
 		Data = Managers.Data.NpcDic[dataId];
 		gameObject.name = $"{Data.DataId}_{Data.Name}";
 
-		Debug.Log(gameObject.name);
-
 		#region Spine Animation
 		SetSpineAnimation(Data.SkeletonDataID, SortingLayers.NPC);
 		PlayAnimation(0, AnimName.IDLE, true);

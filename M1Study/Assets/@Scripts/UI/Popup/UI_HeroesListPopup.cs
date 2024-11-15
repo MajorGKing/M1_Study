@@ -88,12 +88,12 @@ public class UI_HeroesListPopup : UI_Popup
 		GetText((int)Texts.WaitingHeroesCountText).text = $"{Managers.Game.OwnedHeroCount} / ??";
 		GetText((int)Texts.UnownedHeroesCountText).text = $"{Managers.Game.UnownedHeroCount} / ??";
 
-        Refresh_Hero(_equippedHeroes, HeroOwningState.Picked);
-		Refresh_Hero(_waitingHeroes, HeroOwningState.Owned);
-		Refresh_Hero(_unownedHeroes, HeroOwningState.Unowned);
+        Refresh_Hero(_equippedHeroes, Define.EHeroOwningState.Picked);
+		Refresh_Hero(_waitingHeroes, Define.EHeroOwningState.Owned);
+		Refresh_Hero(_unownedHeroes, Define.EHeroOwningState.Unowned);
     }
 
-    void Refresh_Hero(List<UI_HeroesList_HeroItem> list, HeroOwningState owningState)
+    void Refresh_Hero(List<UI_HeroesList_HeroItem> list, Define.EHeroOwningState owningState)
     {
         List<HeroSaveData> heroes = Managers.Game.AllHeroes.Where(h => h.OwningState == owningState).ToList();
 

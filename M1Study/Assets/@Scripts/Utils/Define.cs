@@ -33,6 +33,13 @@ public static class Define
 		Max,
 	}
 
+	public enum EHeroOwningState
+	{
+		Unowned,
+		Owned,
+		Picked,
+	}
+
 	public enum EObjectType
 	{
 		None,
@@ -304,7 +311,7 @@ public static class Define
 		Survival,
 		ClearDungeon
 	}
-	
+
 	public enum EQuestRewardType
 	{
 		Hero,
