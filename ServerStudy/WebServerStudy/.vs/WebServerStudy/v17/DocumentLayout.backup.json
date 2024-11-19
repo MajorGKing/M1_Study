@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebPacket.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Data\\WebPacket.cs",
+              "RelativeDocumentMoniker": "Data\\WebPacket.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Data\\WebPacket.cs",
+              "RelativeToolTip": "Data\\WebPacket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T09:52:24.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestController.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\TestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TestController.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\TestController.cs",
+              "RelativeToolTip": "Controllers\\TestController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T09:46:47.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T09:42:34.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-19T09:29:53.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T09:27:53.868Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
