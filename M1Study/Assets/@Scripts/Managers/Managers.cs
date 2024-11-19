@@ -7,7 +7,7 @@ public class Managers : MonoBehaviour
 	public static bool Initialized { get; set; } = false;
 
 	private static Managers s_instance;
-	private static Managers Instance { get { Init(); return s_instance; } }
+	public static Managers Instance { get { Init(); return s_instance; } }
 
 	#region Contents
 	private GameManager _game = new GameManager();
@@ -32,17 +32,19 @@ public class Managers : MonoBehaviour
 	private SceneManagerEx _scene = new SceneManagerEx();
 	private SoundManager _sound = new SoundManager();
 	private UIManager _ui = new UIManager();
+    private WebManager _web = new WebManager();
 
-	public static DataManager Data { get { return Instance?._data; } }
+    public static DataManager Data { get { return Instance?._data; } }
 	public static PoolManager Pool { get { return Instance?._pool; } }
 	public static ResourceManager Resource { get { return Instance?._resource; } }
 	public static SceneManagerEx Scene { get { return Instance?._scene; } }
 	public static SoundManager Sound { get { return Instance?._sound; } }
 	public static UIManager UI { get { return Instance?._ui; } }
-	#endregion
+    public static WebManager Web { get { return Instance?._web; } }
+    #endregion
 
-	#region Language
-	private static Define.ELanguage _language = Define.ELanguage.Korean;
+    #region Language
+    private static Define.ELanguage _language = Define.ELanguage.Korean;
 	public static Define.ELanguage Language
 	{
 		get { return _language; }
@@ -94,6 +96,7 @@ public class Managers : MonoBehaviour
 			s_instance = go.GetComponent<Managers>();
 
 			s_instance._quest.Init();
-		}
+            s_instance._web.Init();
+        }
 	}
 }
