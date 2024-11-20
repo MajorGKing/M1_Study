@@ -1,4 +1,7 @@
 
+using GameDB;
+using WebServerStudy.Services;
+
 namespace WebServerStudy
 {
     public class Program
@@ -13,6 +16,14 @@ namespace WebServerStudy
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // DB
+            builder.Services.AddDbContext<GameDbContext>();
+
+
+            // Services
+            //builder.Services.AddSingleton<AccountService>();
+            builder.Services.AddScoped<AccountService>();
 
             var app = builder.Build();
 

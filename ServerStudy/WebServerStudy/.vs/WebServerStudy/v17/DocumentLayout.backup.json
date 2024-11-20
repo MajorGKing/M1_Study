@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D91A94C-853C-4FFD-AD7C-B602D0D4C0B6}|..\\GameDB\\GameDB.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\gamedb\\migrations\\20241119153136_addindex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D91A94C-853C-4FFD-AD7C-B602D0D4C0B6}|..\\GameDB\\GameDB.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\gamedb\\gamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GameDB/True/SqlTable/dbo.Test.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A01093B6-52C9-49D8-8906-68886EAF12D2}|..\\ConsoleTest\\ConsoleTest.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\consoletest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:data\\webpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\webserverstudy\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46C20F13-7916-498B-9F52-AC595342E805}|WebServerStudy.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,35 +42,103 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20241119153136_AddIndex.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\GameDB\\Migrations\\20241119153136_AddIndex.cs",
+              "RelativeDocumentMoniker": "..\\GameDB\\Migrations\\20241119153136_AddIndex.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\GameDB\\Migrations\\20241119153136_AddIndex.cs",
+              "RelativeToolTip": "..\\GameDB\\Migrations\\20241119153136_AddIndex.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T15:31:36.352Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Services\\AccountService.cs",
+              "RelativeToolTip": "Services\\AccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T11:35:25.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T09:27:53.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TestController.cs",
               "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\TestController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestController.cs",
               "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Controllers\\TestController.cs",
               "RelativeToolTip": "Controllers\\TestController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T09:46:47.023Z"
+              "WhenOpened": "2024-11-19T09:46:47.023Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "GameDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\GameDB\\GameDbContext.cs",
+              "RelativeDocumentMoniker": "..\\GameDB\\GameDbContext.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\GameDB\\GameDbContext.cs",
+              "RelativeToolTip": "..\\GameDB\\GameDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwB4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T12:01:48.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\ConsoleTest\\Program.cs",
+              "RelativeDocumentMoniker": "..\\ConsoleTest\\Program.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\ConsoleTest\\Program.cs",
+              "RelativeToolTip": "..\\ConsoleTest\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwEEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T14:40:02.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.Test [\uB370\uC774\uD130]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GameDB/True/SqlTable/dbo.Test.sql",
+              "ToolTip": "dbo.Test [\uB370\uC774\uD130]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-19T15:16:24.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "WebPacket.cs",
               "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Data\\WebPacket.cs",
               "RelativeDocumentMoniker": "Data\\WebPacket.cs",
@@ -67,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -75,19 +159,8 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-19T09:29:53.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\WebServerStudy\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T09:27:53.868Z"
+              "WhenOpened": "2024-11-19T09:29:53.542Z",
+              "EditorCaption": ""
             }
           ]
         }
