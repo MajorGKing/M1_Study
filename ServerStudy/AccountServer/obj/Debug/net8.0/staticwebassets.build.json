@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "v5FwwXbW4LetGZr78uH/Zxm6lG4eWGlHM2otMDlRgoU=",
+  "Source": "AccountServer",
+  "BasePath": "_content/AccountServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
