@@ -3,7 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AccountDB/True/SqlTable/dbo.Account.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\accountserver\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|solutionrelative:accountserver\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\accountserver\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|solutionrelative:accountserver\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\accountserver\\services\\facebookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|solutionrelative:accountserver\\services\\facebookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\accountserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|solutionrelative:accountserver\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|c:\\users\\major\\documents\\unity projects\\work\\m1study\\serverstudy\\accountserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{606E68C9-E9C4-4B8E-BDDE-D39F1DEDEBDF}|AccountServer\\AccountServer.csproj|solutionrelative:accountserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,16 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "AccountServer\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "AccountServer\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:44:19.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FacebookService.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\FacebookService.cs",
+              "RelativeDocumentMoniker": "AccountServer\\Services\\FacebookService.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\FacebookService.cs",
+              "RelativeToolTip": "AccountServer\\Services\\FacebookService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:44:19.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "AccountServer\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\AccountService.cs",
+              "RelativeToolTip": "AccountServer\\Services\\AccountService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwCoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:31:52.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Program.cs",
+              "RelativeDocumentMoniker": "AccountServer\\Program.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Program.cs",
+              "RelativeToolTip": "AccountServer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:43:02.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.Account [\uB370\uC774\uD130]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AccountDB/True/SqlTable/dbo.Account.sql",
-              "ToolTip": "dbo.Account [\uB370\uC774\uD130]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-21T13:07:04.848Z",
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "AccountServer\\Services\\JwtTokenService.cs",
+              "ToolTip": "C:\\Users\\Major\\Documents\\Unity Projects\\work\\M1Study\\ServerStudy\\AccountServer\\Services\\JwtTokenService.cs",
+              "RelativeToolTip": "AccountServer\\Services\\JwtTokenService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvyQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T01:32:35.711Z",
               "EditorCaption": ""
             }
           ]
